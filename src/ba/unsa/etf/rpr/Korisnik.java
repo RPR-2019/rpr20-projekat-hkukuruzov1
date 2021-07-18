@@ -3,9 +3,9 @@ package ba.unsa.etf.rpr;
 public class Korisnik {
     private String username;
     private String password;
-    private boolean admin;
+    private int admin;
 
-    public Korisnik(String username, String password, boolean admin) {
+    public Korisnik(String username, String password, int admin) {
         this.username = username;
         this.password = password;
         this.admin = admin;
@@ -30,11 +30,11 @@ public class Korisnik {
         this.password = password;
     }
 
-    public boolean isAdmin() {
+    public int getAdmin() {
         return admin;
     }
 
-    public void setAdmin(boolean admin) {
+    public void setAdmin(int admin) {
         this.admin = admin;
     }
 }

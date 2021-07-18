@@ -22,8 +22,15 @@ public class Controller {
         System.exit(0);
     }
     public void actionLogin(ActionEvent actionEvent) throws SQLException {
-        if(dao.dajKorisnika(lbl.getText(),pass.getText()))
+        if(dao.daLiPostojiKorisnik(lbl.getText(),pass.getText()))
         {
+            Korisnik k= dao.dajKorisnika(lbl.getText(),pass.getText());
+            if(dao.daLiJeAdmin(k.getUsername(),k.getPassword())){
+               //otvori admin prozor
+            }
+            else{
+                //otvori radnik prozor
+            }
         }
         else{
             lbl.textProperty().setValue("");
