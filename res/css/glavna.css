@@ -20,3 +20,13 @@
     -fx-background-image: url("/img/background.jpg");
     -fx-background-size: 100% 100%;
 }
+#lbl {
+    -fx-alignment: center ;
+}
+#pass {
+-fx-alignment: center ;
+}
+.login{
+-fx-background-color: #0080FF;
+-fx-text-fill: white;
+}
