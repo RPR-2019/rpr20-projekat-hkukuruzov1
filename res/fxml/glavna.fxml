@@ -52,7 +52,7 @@
       </MenuBar>
    </top>
    <center>
-      <GridPane fx:id="grdPane" hgap="5.0" prefHeight="400.0" prefWidth="300.0" vgap="5.0" BorderPane.alignment="CENTER">
+      <GridPane fx:id="grdPane" hgap="5.0" vgap="5.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" />
         </columnConstraints>
@@ -70,7 +70,7 @@
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin></PasswordField>
-            <Button fx:id="login" mnemonicParsing="false" styleClass="login" text="Login" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="login" mnemonicParsing="false" onAction="#actionLogin" styleClass="login" text="Login" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
