@@ -1,5 +1,9 @@
 
+X
+java:S17511"6Remove this "return" statement or make it conditional.(§Ğãùÿÿÿÿ8ó¥·Ü«/
+i
+java:S3973'"GUse indentation to denote the code conditionally executed by this "if".(î•ŠÖùÿÿÿÿ8›´çÜ«/
 F
-java:S2115")Add password protection to this database.(¸¢ìâ8ÈÀ¶¸«/
-J
-java:S1068"(Remove this unused "conn" private field.(´¤´‚ıÿÿÿÿ8º±¸«/
+java:S2115")Add password protection to this database.(¸¢ìâ8ÈÀ¶¸«/
+S
+java:S1751"6Remove this "return" statement or make it conditional.(§¼Éç8¨„ïÛ«/

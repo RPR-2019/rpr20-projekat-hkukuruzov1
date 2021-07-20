@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.RadnikController">
     <stylesheets>
         <URL value="@/css/radnik.css" />
     </stylesheets>
@@ -29,12 +29,12 @@
    <children>
       <ButtonBar GridPane.columnIndex="1" GridPane.rowIndex="1">
          <buttons>
-            <RadioButton mnemonicParsing="false" text="Remote">
+            <RadioButton fx:id="rw" mnemonicParsing="false" text="Remote">
                <toggleGroup>
                   <ToggleGroup fx:id="grupa" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="Onsite" toggleGroup="$grupa" />
+            <RadioButton fx:id="ow" mnemonicParsing="false" text="Onsite" toggleGroup="$grupa" />
          </buttons>
       </ButtonBar>
       <Label text="Izaberi vrstu rada" GridPane.rowIndex="1">
@@ -42,7 +42,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <Button mnemonicParsing="false" text="Početak" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <Button mnemonicParsing="false" text="Kraj" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Button fx:id="ulaz" mnemonicParsing="false" onAction="#start" text="Početak" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Button fx:id="izlaz" mnemonicParsing="false" onAction="#kraj" text="Kraj" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
    </children>
 </GridPane>
