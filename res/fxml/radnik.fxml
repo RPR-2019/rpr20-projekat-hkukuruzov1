@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.RadnikController">
+<GridPane fx:id="grpane" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.RadnikController">
     <stylesheets>
         <URL value="@/css/radnik.css" />
     </stylesheets>
@@ -21,13 +21,13 @@
   </columnConstraints>
   <rowConstraints>
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ButtonBar GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <ButtonBar GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <buttons>
             <RadioButton fx:id="rw" mnemonicParsing="false" text="Remote">
                <toggleGroup>
@@ -37,12 +37,14 @@
             <RadioButton fx:id="ow" mnemonicParsing="false" text="Onsite" toggleGroup="$grupa" />
          </buttons>
       </ButtonBar>
-      <Label text="Izaberi vrstu rada" GridPane.rowIndex="1">
+      <Label text="Izaberi vrstu rada" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
       <Button fx:id="ulaz" mnemonicParsing="false" onAction="#start" text="Početak" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <Button fx:id="izlaz" mnemonicParsing="false" onAction="#kraj" text="Kraj" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Label text="Vrijeme" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <Label fx:id="time" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
    </children>
 </GridPane>

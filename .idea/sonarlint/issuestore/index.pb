@@ -19,8 +19,6 @@ C
 res/fxml/admin.fxml,0\e\0e0c73d135306af15be43518364630c2696cf328
 S
 #src/ba/unsa/etf/rpr/mjestoRada.java,b\2\b2088f64dcda6191f65123cce59c7af2a2280959
-B
-res/css/radnik.css,1\e\1ea7632cd2c5583ac8be92141fffe0926b6a028d
 X
 (src/ba/unsa/etf/rpr/AdminController.java,3\1\31b92c906370d9c6d0ac1d8b33d46c2c90b41d7e
 O

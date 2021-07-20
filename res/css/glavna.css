@@ -30,3 +30,6 @@
 -fx-background-color: #0080FF;
 -fx-text-fill: white;
 }
+#time{
+-fx-text-alignment: right;
+}
