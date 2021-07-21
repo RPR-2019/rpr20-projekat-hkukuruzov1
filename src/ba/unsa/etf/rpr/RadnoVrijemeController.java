@@ -32,9 +32,7 @@ public class RadnoVrijemeController {
         dao=RadnoVrijemeDao.getInstance();
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = LocalTime.now();
-            String s;
-            s=currentTime.getHour()<10?"0":"";
-            time.setText(s +currentTime.getHour()+ ":" + currentTime.getMinute() + ":" + currentTime.getSecond());
+            time.setText(currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
         }),
                 new KeyFrame(Duration.seconds(1))
         );

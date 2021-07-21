@@ -17,6 +17,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class Controller {
     public Button login;
@@ -29,9 +30,7 @@ public class Controller {
     dao=KorisnikDao.getInstance();
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = LocalTime.now();
-            String s;
-            s=currentTime.getHour()<10?"0":"";
-            time.setText(s +currentTime.getHour()+ ":" + currentTime.getMinute() + ":" + currentTime.getSecond());
+            time.setText(currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
         }),
                 new KeyFrame(Duration.seconds(1))
         );

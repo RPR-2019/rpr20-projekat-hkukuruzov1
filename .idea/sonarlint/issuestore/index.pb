@@ -19,11 +19,17 @@ S
 #src/ba/unsa/etf/rpr/mjestoRada.java,b\2\b2088f64dcda6191f65123cce59c7af2a2280959
 X
 (src/ba/unsa/etf/rpr/AdminController.java,3\1\31b92c906370d9c6d0ac1d8b33d46c2c90b41d7e
-O
-src/ba/unsa/etf/rpr/Radnik.java,6\f\6f6d9827e7ca2d107b173b68b5d1bc372fdde5f3
 =
 korisnici.sql,7\f\7fa0fc1591e48d6d8e10bb35625a819184e21da4
-Y
-)src/ba/unsa/etf/rpr/RadnikController.java,4\8\48a6334030e0309b3498993dde24087aa5a1876f
 <
 korisnici.db,7\e\7e48f36f45e9b9c3b7aab5afa045a76bf3c6b6d2
+B
+res/css/glavna.css,1\9\19bbd9e718e338dc33e21b67a1065881af466ad8
+B
+res/css/radnik.css,1\e\1ea7632cd2c5583ac8be92141fffe0926b6a028d
+U
+%src/ba/unsa/etf/rpr/RadnoVrijeme.java,4\1\415d2e8b5e79c9a5121eae50c75246facf51fc92
+_
+/src/ba/unsa/etf/rpr/RadnoVrijemeController.java,b\9\b9095d9fc2f1249d9260153a7809feabe54efb01
+X
+(src/ba/unsa/etf/rpr/RadnoVrijemeDao.java,c\6\c6bbd0f3d1124311be1b6b3893c1b9842dcfdc7c
