@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="grpane" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.RadnikController">
+<GridPane fx:id="grpane" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.RadnoVrijemeController">
     <stylesheets>
         <URL value="@/css/radnik.css" />
     </stylesheets>
@@ -29,12 +29,12 @@
    <children>
       <ButtonBar GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <buttons>
-            <RadioButton fx:id="rw" mnemonicParsing="false" text="Remote">
+            <RadioButton fx:id="rw" mnemonicParsing="false" onAction="#kuci" text="Remote">
                <toggleGroup>
                   <ToggleGroup fx:id="grupa" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="ow" mnemonicParsing="false" text="Onsite" toggleGroup="$grupa" />
+            <RadioButton fx:id="ow" mnemonicParsing="false" onAction="#firma" text="Onsite" toggleGroup="$grupa" />
          </buttons>
       </ButtonBar>
       <Label text="Izaberi vrstu rada" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">

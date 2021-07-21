@@ -51,7 +51,11 @@ public class Controller {
                 // do what you have to do
                 stage.close();
                 Stage primaryStage=new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("/fxml/admin.fxml"));
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/fxml/admin.fxml"));
+                Parent root=loader.load();
+                RadnoVrijemeController novoooo=loader.getController();
+                novoooo.postavi(this);
                 primaryStage.setTitle("Clockify");
                 primaryStage.setScene(new Scene(root, 300, 350));
                 primaryStage.setMinHeight(300);
@@ -64,7 +68,11 @@ public class Controller {
                 // do what you have to do
                 stage.close();
                 Stage primaryStage=new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("/fxml/radnik.fxml"));
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/fxml/radnik.fxml"));
+                Parent root=loader.load();
+                RadnoVrijemeController novoooo=loader.getController();
+                novoooo.postavi(this);
                 primaryStage.setTitle("Clockify");
                 primaryStage.setScene(new Scene(root, 350, 200));
                 primaryStage.setMinHeight(200);
