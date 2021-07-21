@@ -15,6 +15,7 @@ import javafx.util.Duration;
 
 import java.sql.SQLException;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class RadnoVrijemeController {
     public Button ulaz;
@@ -44,8 +45,9 @@ public class RadnoVrijemeController {
         c1=s;
     }
     public void start(ActionEvent actionEvent) {
+
         rad.setId(c1.lbl.getText());
-        rad.setPocetak(LocalTime.now().toString());
+        rad.setPocetak(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
         if(LocalTime.now().getHour()<9) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Obavijest");
@@ -58,7 +60,7 @@ public class RadnoVrijemeController {
     }
 
     public void kraj(ActionEvent actionEvent) throws SQLException {
-        rad.setKraj(LocalTime.now().toString());
+        rad.setKraj(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
         provjera(rad);
         if(aktiv) {
             if(LocalTime.now().getHour()<16){

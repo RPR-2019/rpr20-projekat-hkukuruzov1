@@ -54,8 +54,6 @@ public class Controller {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/fxml/admin.fxml"));
                 Parent root=loader.load();
-                RadnoVrijemeController novoooo=loader.getController();
-                novoooo.postavi(this);
                 primaryStage.setTitle("Clockify");
                 primaryStage.setScene(new Scene(root, 300, 350));
                 primaryStage.setMinHeight(300);

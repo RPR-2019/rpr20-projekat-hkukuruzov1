@@ -15,8 +15,6 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 a
 1.idea/libraries/org_xerial_sqlite_jdbc_3_21_0.xml,5\4\5425a9e8197bbc593a3ad60641080ce9498caabd
-C
-res/fxml/admin.fxml,0\e\0e0c73d135306af15be43518364630c2696cf328
 S
 #src/ba/unsa/etf/rpr/mjestoRada.java,b\2\b2088f64dcda6191f65123cce59c7af2a2280959
 X
