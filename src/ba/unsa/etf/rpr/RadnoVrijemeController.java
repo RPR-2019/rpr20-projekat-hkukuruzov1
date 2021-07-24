@@ -14,6 +14,7 @@ import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -46,6 +47,9 @@ public class RadnoVrijemeController {
         if (rad.getVrstaRada() != null) {
             rad.setId(c1.lbl.getText());
             rad.setPocetak(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
+            rad.setDan(LocalDate.now().getDayOfMonth());
+            rad.setMjesec(LocalDate.now().getMonth().toString());
+            rad.setGodina(LocalDate.now().getYear());
             if (LocalTime.now().getHour() < 9) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Obavijest");

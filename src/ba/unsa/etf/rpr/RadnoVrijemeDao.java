@@ -15,7 +15,7 @@ public class RadnoVrijemeDao {
     private RadnoVrijemeDao() throws SQLException {
         String url="jdbc:sqlite:korisnici.db";
         conn= DriverManager.getConnection(url);
-        ubaciRadnoVrijeme=conn.prepareStatement("INSERT INTO radnovrijeme values(?,?,?,?)");
+        ubaciRadnoVrijeme=conn.prepareStatement("INSERT INTO radnovrijeme values(?,?,?,?,?,?,?)");
         dajSve=conn.prepareStatement("SELECT * FROM radnovrijeme");
         dajImeiPrezime=conn.prepareStatement("SELECT ime,prezime from korisnici where username=?");
     }
@@ -30,6 +30,9 @@ public class RadnoVrijemeDao {
         ubaciRadnoVrijeme.setString(2,rw.getPocetak());
         ubaciRadnoVrijeme.setString(3,rw.getKraj());
         ubaciRadnoVrijeme.setString(4,rw.getVrstaRada().toString());
+        ubaciRadnoVrijeme.setInt(5,rw.getDan());
+        ubaciRadnoVrijeme.setString(6,rw.getMjesec());
+        ubaciRadnoVrijeme.setInt(7,rw.getGodina());
         ubaciRadnoVrijeme.executeUpdate();
     }
     public List<String> dajSve() throws SQLException {
@@ -38,7 +41,7 @@ public class RadnoVrijemeDao {
         while(f.next()){
             dajImeiPrezime.setString(1,f.getString(1));
             var x=dajImeiPrezime.executeQuery();
-            lista.add(x.getString(1)+" "+x.getString(2)+" "+f.getString(2)+" "+f.getString(3)+" "+f.getString(4));
+            lista.add(x.getString(1)+" "+x.getString(2)+" "+f.getString(2)+" "+f.getString(3)+" "+f.getString(4)+" "+f.getInt(5)+" "+f.getString(6)+" "+f.getInt(7));
         }
         return lista;
     }
