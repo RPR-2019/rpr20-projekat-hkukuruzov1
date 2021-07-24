@@ -10,13 +10,14 @@ import java.util.List;
 public class RadnoVrijemeDao {
     private Connection conn;
     private static RadnoVrijemeDao instance;
-    private PreparedStatement ubaciRadnoVrijeme,dajSve;
+    private PreparedStatement ubaciRadnoVrijeme,dajSve,dajImeiPrezime;
 
     private RadnoVrijemeDao() throws SQLException {
         String url="jdbc:sqlite:korisnici.db";
         conn= DriverManager.getConnection(url);
         ubaciRadnoVrijeme=conn.prepareStatement("INSERT INTO radnovrijeme values(?,?,?,?)");
         dajSve=conn.prepareStatement("SELECT * FROM radnovrijeme");
+        dajImeiPrezime=conn.prepareStatement("SELECT ime,prezime from korisnici where username=?");
     }
     public static RadnoVrijemeDao getInstance() throws SQLException {
         if(instance==null){
@@ -35,7 +36,9 @@ public class RadnoVrijemeDao {
         List<String> lista=new ArrayList<>();
         var f=dajSve.executeQuery();
         while(f.next()){
-            lista.add(f.getString(1)+" "+f.getString(2)+" "+f.getString(3)+" "+f.getString(4));
+            dajImeiPrezime.setString(1,f.getString(1));
+            var x=dajImeiPrezime.executeQuery();
+            lista.add(x.getString(1)+" "+x.getString(2)+" "+f.getString(2)+" "+f.getString(3)+" "+f.getString(4));
         }
         return lista;
     }

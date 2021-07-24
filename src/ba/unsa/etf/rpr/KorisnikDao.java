@@ -46,7 +46,7 @@ public class KorisnikDao {
         dajKorisnika.setString(2,s2);
         var rs=dajKorisnika.executeQuery();
         while(rs.next()){
-            return new Korisnik(rs.getString(1),rs.getString(2),rs.getInt(3));
+            return new Korisnik(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getString(5));
         }
         return null;
     }
