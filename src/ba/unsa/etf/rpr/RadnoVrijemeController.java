@@ -43,42 +43,69 @@ public class RadnoVrijemeController {
         c1=s;
     }
     public void start(ActionEvent actionEvent) {
-
-        rad.setId(c1.lbl.getText());
-        rad.setPocetak(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
-        if(LocalTime.now().getHour()<9) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Obavijest");
-            alert.setHeaderText("Obavijest o satnici");
-            alert.setContentText("Počeli ste raditi prijevremeno, satnica će vam se uračuniti!");
-
-            alert.showAndWait();
-        }
-        aktiv=true;
-    }
-
-    public void kraj(ActionEvent actionEvent) throws SQLException {
-        rad.setKraj(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
-        provjera(rad);
-        if(aktiv) {
-            if(LocalTime.now().getHour()<16){
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Upozorenje");
-                alert.setHeaderText("Upozorenje o satnici");
-                alert.setContentText("Odjavili ste se prije kraja radnog vremena, satnica će vam biti zabilježena!");
-
-                alert.showAndWait();
-            }
-                else{
+        if (rad.getVrstaRada() != null) {
+            rad.setId(c1.lbl.getText());
+            rad.setPocetak(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
+            if (LocalTime.now().getHour() < 9) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Obavijest");
                 alert.setHeaderText("Obavijest o satnici");
-                alert.setContentText("Radite prekovremeno, satnica će vam se uračuniti!");
+                alert.setContentText("Počeli ste raditi prijevremeno, satnica će vam se uračuniti!");
+
+                alert.showAndWait();
+            }
+            aktiv = true;
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Upozorenje");
+            alert.setHeaderText("Upozorenje o vrsti rada");
+            alert.setContentText("Morate odabrati vrstu rada!");
+
+            alert.showAndWait();
+        }
+    }
+
+    public void kraj(ActionEvent actionEvent) throws SQLException {
+        if (provjera(rad)) {
+            rad.setKraj(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
+            if (aktiv) {
+                if (LocalTime.now().getHour() < 16) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Upozorenje");
+                    alert.setHeaderText("Upozorenje o satnici");
+                    alert.setContentText("Odjavili ste se prije kraja radnog vremena, satnica će vam biti zabilježena!");
+
+                    alert.showAndWait();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Obavijest");
+                    alert.setHeaderText("Obavijest o satnici");
+                    alert.setContentText("Radite prekovremeno, satnica će vam se uračuniti!");
+
+                    alert.showAndWait();
+                }
+            }
+            dao.ubaciVrijeme(rad);
+        }
+        else{
+            if(rad.getPocetak()==null){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Upozorenje");
+                alert.setHeaderText("Upozorenje o satnici");
+                alert.setContentText("Morate se prijaviti da radite kako bi se odjavili!");
+
+                alert.showAndWait();
+            }
+                else if(rad.getVrstaRada()==null){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Upozorenje");
+                alert.setHeaderText("Upozorenje o vrsti rada");
+                alert.setContentText("Morate odabrati vrstu rada!");
 
                 alert.showAndWait();
             }
         }
-        dao.ubaciVrijeme(rad);
     }
     public void firma(ActionEvent actionEvent) {
         rad.setVrstaRada(mjestoRada.ONSITE);
@@ -87,7 +114,7 @@ public class RadnoVrijemeController {
         rad.setVrstaRada(mjestoRada.REMOTE);
     }
     public boolean provjera(RadnoVrijeme s){
-        if(s.getId()!=null && s.getKraj()!=null && s.getPocetak()!=null && s.getVrstaRada()!=null)
+        if(s.getId()!=null && s.getKraj()==null && s.getPocetak()!=null && s.getVrstaRada()!=null)
             return true;
         return false;
     }
