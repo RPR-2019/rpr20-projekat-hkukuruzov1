@@ -33,3 +33,5 @@ _
 /src/ba/unsa/etf/rpr/RadnoVrijemeController.java,b\9\b9095d9fc2f1249d9260153a7809feabe54efb01
 X
 (src/ba/unsa/etf/rpr/RadnoVrijemeDao.java,c\6\c6bbd0f3d1124311be1b6b3893c1b9842dcfdc7c
+C
+res/fxml/admin.fxml,0\e\0e0c73d135306af15be43518364630c2696cf328
