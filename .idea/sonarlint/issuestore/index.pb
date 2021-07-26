@@ -23,15 +23,9 @@ X
 korisnici.sql,7\f\7fa0fc1591e48d6d8e10bb35625a819184e21da4
 <
 korisnici.db,7\e\7e48f36f45e9b9c3b7aab5afa045a76bf3c6b6d2
-B
-res/css/glavna.css,1\9\19bbd9e718e338dc33e21b67a1065881af466ad8
-B
-res/css/radnik.css,1\e\1ea7632cd2c5583ac8be92141fffe0926b6a028d
 U
 %src/ba/unsa/etf/rpr/RadnoVrijeme.java,4\1\415d2e8b5e79c9a5121eae50c75246facf51fc92
 _
 /src/ba/unsa/etf/rpr/RadnoVrijemeController.java,b\9\b9095d9fc2f1249d9260153a7809feabe54efb01
 X
 (src/ba/unsa/etf/rpr/RadnoVrijemeDao.java,c\6\c6bbd0f3d1124311be1b6b3893c1b9842dcfdc7c
-C
-res/fxml/admin.fxml,0\e\0e0c73d135306af15be43518364630c2696cf328

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
@@ -8,32 +9,53 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.AdminController">
-  <columnConstraints>
+<GridPane hgap="5.0" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.AdminController">
+    <stylesheets>
+        <URL value="@/css/admin.css" />
+    </stylesheets>
+    <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-    <ColumnConstraints hgrow="SOMETIMES" />
+      <ColumnConstraints hgrow="SOMETIMES" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     <RowConstraints vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ListView fx:id="lv" GridPane.rowIndex="1" GridPane.rowSpan="4" />
+      <ListView fx:id="lv" GridPane.rowIndex="1" GridPane.rowSpan="6" />
       <Label text="Posljednje aktivnosti:" />
-      <Label text="Pretraži po username:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-      <TextField fx:id="tf1" GridPane.columnIndex="2" />
-      <Label text="Izaberi dan" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-      <DatePicker fx:id="datum" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <TextField fx:id="tf2" editable="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <Button fx:id="tipka" mnemonicParsing="false" onAction="#submit" text="Pretraži" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <ListView fx:id="lv2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <HBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label text="Pretraži po username " />
+            <TextField fx:id="tf1" />
+         </children>
+      </HBox>
+      <HBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <Label text="Izaberi dan " />
+            <DatePicker fx:id="datum" />
+            <Button fx:id="tipka" mnemonicParsing="false" onAction="#submit" text="Pretraži" />
+         </children>
+      </HBox>
+      <TextField fx:id="tf2" editable="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+      <ListView fx:id="lv2" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <HBox GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <children>
+            <Label text="Učinak zaposlenika za mjesec " />
+            <Label fx:id="lb3" />
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" text="Dodaj novog korisnika" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+      <Button mnemonicParsing="false" text="Izbriši korisnika" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+      <Button fx:id="odoh" mnemonicParsing="false" onAction="#cya" styleClass="logut" text="Logut" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

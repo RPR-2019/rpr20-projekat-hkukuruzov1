@@ -55,8 +55,8 @@ public class Controller {
                 Parent root=loader.load();
                 primaryStage.setTitle("Clockify");
                 primaryStage.setScene(new Scene(root, 300, 350));
-                primaryStage.setMinHeight(300);
-                primaryStage.setMinWidth(300);
+                primaryStage.setMaximized(true);
+                primaryStage.setResizable(false);
                 primaryStage.show();
             }
             else{
