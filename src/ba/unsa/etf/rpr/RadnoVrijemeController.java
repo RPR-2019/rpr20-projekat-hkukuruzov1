@@ -27,10 +27,10 @@ public class RadnoVrijemeController {
     public Label time;
     public RadnoVrijeme rad=new RadnoVrijeme();
     public Controller c1;
-    private RadnoVrijemeDao dao;
+    private Dao dao;
     @FXML
     public void initialize() throws SQLException {
-        dao=RadnoVrijemeDao.getInstance();
+        dao=Dao.getInstance();
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = LocalTime.now();
             time.setText(currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")));

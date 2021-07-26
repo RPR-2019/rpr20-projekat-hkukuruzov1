@@ -7,25 +7,56 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RadnoVrijemeDao {
+public class Dao {
     private Connection conn;
-    private static RadnoVrijemeDao instance;
-    private PreparedStatement ubaciRadnoVrijeme,dajSve,dajImeiPrezime,dajDan,dajSveUMjesecu;
+    private static Dao instance;
+    private PreparedStatement dajKorisnika,ubaciRadnoVrijeme,dajSve,dajImeiPrezime,dajDan,dajSveUMjesecu,brisiKorisnika;
 
-    private RadnoVrijemeDao() throws SQLException {
+    private Dao() throws SQLException {
         String url="jdbc:sqlite:korisnici.db";
         conn= DriverManager.getConnection(url);
+        dajKorisnika=conn.prepareStatement("SELECT * FROM korisnici WHERE username=? and password=?");
         ubaciRadnoVrijeme=conn.prepareStatement("INSERT INTO radnovrijeme values(?,?,?,?,?,?,?)");
         dajSve=conn.prepareStatement("SELECT * FROM radnovrijeme");
         dajImeiPrezime=conn.prepareStatement("SELECT ime,prezime from korisnici where username=?");
         dajDan=conn.prepareStatement("SELECT * from radnovrijeme where id=? and dan=? and mjesec=? and godina=?");
         dajSveUMjesecu=conn.prepareStatement("SELECT * from radnovrijeme where id=? and mjesec=? and godina=? order by dan");
+        /*brisiKorisnika=conn.prepareStatement("DELETE from korisnici where username=?");*/
     }
-    public static RadnoVrijemeDao getInstance() throws SQLException {
+    public static Dao getInstance() throws SQLException {
         if(instance==null){
-            instance=new RadnoVrijemeDao();
+            instance=new Dao();
         }
         return instance;
+    }
+    public boolean daLiPostojiKorisnik(String s1,String s2) throws SQLException {
+        dajKorisnika.setString(1,s1);
+        dajKorisnika.setString(2,s2);
+        var rs=dajKorisnika.executeQuery();
+        while(rs.next()){
+            return true;
+        }
+            return false;
+
+    }
+    public boolean daLiJeAdmin(String s1,String s2) throws SQLException {
+        dajKorisnika.setString(1,s1);
+        dajKorisnika.setString(2,s2);
+        var rs=dajKorisnika.executeQuery();
+        while(rs.next()){
+            if(rs.getInt(3)==1)
+            return true;
+        }
+        return false;
+    }
+    public Korisnik dajKorisnika(String s1,String s2) throws SQLException {
+        dajKorisnika.setString(1,s1);
+        dajKorisnika.setString(2,s2);
+        var rs=dajKorisnika.executeQuery();
+        while(rs.next()){
+            return new Korisnik(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getString(5));
+        }
+        return null;
     }
     public void ubaciVrijeme(RadnoVrijeme rw) throws SQLException {
         ubaciRadnoVrijeme.setString(1,rw.getId());
@@ -69,5 +100,8 @@ public class RadnoVrijemeDao {
         }
         return ret;
     }
-
+    /*public void brisanje(String a) throws SQLException {
+        brisiKorisnika.setString(1,a);
+        brisiKorisnika.executeUpdate();
+    }*/
 }

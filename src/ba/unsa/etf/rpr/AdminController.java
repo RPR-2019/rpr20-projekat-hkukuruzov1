@@ -17,15 +17,15 @@ import java.util.List;
 
 public class AdminController {
     public ListView lv,lv2;
-    private RadnoVrijemeDao dao;
+    private Dao dao;
     public List<String> o;
-    public TextField tf1,tf2;
+    public TextField tf1,tf2,tfdlt;
     public DatePicker datum;
     public Button tipka,odoh,add,dlt;
     public Label lb3;
     @FXML
     public void initialize() throws SQLException {
-        dao=RadnoVrijemeDao.getInstance();
+        dao=Dao.getInstance();
         var f=dao.dajSve();
         Collections.reverse(f);
         lv.getItems().addAll(f);
@@ -48,5 +48,10 @@ public class AdminController {
         primaryStage.setScene(new Scene(root, 400, 350));
         primaryStage.setResizable(false);
         primaryStage.show();
+    }
+    public void brisi(ActionEvent actionEvent) throws IOException, SQLException {
+        /*if(tfdlt.getText()!=null){
+            dao.brisanje(tfdlt.getText());
+        }*/
     }
 }
