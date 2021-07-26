@@ -16,8 +16,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/glavna.fxml"));
         primaryStage.setTitle("Clockify");
         primaryStage.setScene(new Scene(root, 400, 350));
-        primaryStage.setMinHeight(275);
-        primaryStage.setMinWidth(300);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

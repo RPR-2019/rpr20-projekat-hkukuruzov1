@@ -63,11 +63,11 @@
          <children>
             <TextField fx:id="lbl" promptText="username">
                <GridPane.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets left="15.0" right="15.0" />
                </GridPane.margin></TextField>
             <PasswordField fx:id="pass" promptText="password" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets left="15.0" right="15.0" />
                </GridPane.margin></PasswordField>
             <Button fx:id="login" mnemonicParsing="false" onAction="#actionLogin" styleClass="login" text="Login" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
          </children>

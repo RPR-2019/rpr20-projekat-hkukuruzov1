@@ -21,7 +21,7 @@ public class AdminController {
     public List<String> o;
     public TextField tf1,tf2;
     public DatePicker datum;
-    public Button tipka,odoh;
+    public Button tipka,odoh,add,dlt;
     public Label lb3;
     @FXML
     public void initialize() throws SQLException {
@@ -46,8 +46,7 @@ public class AdminController {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/glavna.fxml"));
         primaryStage.setTitle("Clockify");
         primaryStage.setScene(new Scene(root, 400, 350));
-        primaryStage.setMinHeight(275);
-        primaryStage.setMinWidth(300);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 }
