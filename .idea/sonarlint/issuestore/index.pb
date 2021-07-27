@@ -9,8 +9,6 @@ M
 src/ba/unsa/etf/rpr/Main.java,b\c\bc4c90a37ac9d1b5ef19ac18f695d26749bb9c3f
 Q
 !src/ba/unsa/etf/rpr/Korisnik.java,3\a\3a70354acd51a67dbf40b27e3a518faab4d92b26
-T
-$src/ba/unsa/etf/rpr/KorisnikDao.java,f\0\f05003f1ef02d9e1fe55ddc437e7665e4e49a44c
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 a
@@ -27,5 +25,9 @@ U
 %src/ba/unsa/etf/rpr/RadnoVrijeme.java,4\1\415d2e8b5e79c9a5121eae50c75246facf51fc92
 _
 /src/ba/unsa/etf/rpr/RadnoVrijemeController.java,b\9\b9095d9fc2f1249d9260153a7809feabe54efb01
-X
-(src/ba/unsa/etf/rpr/RadnoVrijemeDao.java,c\6\c6bbd0f3d1124311be1b6b3893c1b9842dcfdc7c
+D
+res/fxml/glavna.fxml,4\6\46205856eebc4febaba69b40e982cc6ab2568abf
+A
+res/css/admin.css,c\d\cd4b7562570638dfb6613318dd024c0b42c7930a
+L
+src/ba/unsa/etf/rpr/Dao.java,0\8\08ba4a142df355f54d09a1b570cf0d936a6cc53c

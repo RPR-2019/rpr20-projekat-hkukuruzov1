@@ -10,7 +10,7 @@ import java.util.List;
 public class Dao {
     private Connection conn;
     private static Dao instance;
-    private PreparedStatement dajKorisnika,ubaciRadnoVrijeme,dajSve,dajImeiPrezime,dajDan,dajSveUMjesecu,brisiKorisnika;
+    private PreparedStatement dajKorisnika,ubaciRadnoVrijeme,dajSve,dajImeiPrezime,dajDan,dajSveUMjesecu,brisiKorisnika,brisiKorisnika1,ubaciKorisnika;
 
     private Dao() throws SQLException {
         String url="jdbc:sqlite:korisnici.db";
@@ -21,7 +21,9 @@ public class Dao {
         dajImeiPrezime=conn.prepareStatement("SELECT ime,prezime from korisnici where username=?");
         dajDan=conn.prepareStatement("SELECT * from radnovrijeme where id=? and dan=? and mjesec=? and godina=?");
         dajSveUMjesecu=conn.prepareStatement("SELECT * from radnovrijeme where id=? and mjesec=? and godina=? order by dan");
-        /*brisiKorisnika=conn.prepareStatement("DELETE from korisnici where username=?");*/
+        brisiKorisnika=conn.prepareStatement("DELETE from korisnici where username=?");
+        brisiKorisnika1=conn.prepareStatement("DELETE from radnovrijeme where id=?");
+        ubaciKorisnika=conn.prepareStatement("INSERT INTO korisnici(username,password,admin,ime,prezime) values(?,?,?,?,?)");
     }
     public static Dao getInstance() throws SQLException {
         if(instance==null){
@@ -100,8 +102,10 @@ public class Dao {
         }
         return ret;
     }
-    /*public void brisanje(String a) throws SQLException {
+    public void brisanje(String a) throws SQLException {
+        brisiKorisnika1.setString(1,a);
+        brisiKorisnika1.executeUpdate();
         brisiKorisnika.setString(1,a);
         brisiKorisnika.executeUpdate();
-    }*/
+    }
 }

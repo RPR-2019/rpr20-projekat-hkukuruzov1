@@ -18,5 +18,5 @@ CREATE TABLE IF NOT EXISTS "radnovrijeme" (
 	FOREIGN KEY("id") REFERENCES "korisnici"("username")
 );
 INSERT INTO "korisnici" VALUES ('admin','admin',1,'admin','admin');
-INSERT INTO "korisnici" VALUES ('haris','0000',0,'Haris','Kukuruzovic');
+INSERT INTO "korisnici" VALUES ('haris','0000',0,'Haris','Kukuruzović');
 COMMIT;

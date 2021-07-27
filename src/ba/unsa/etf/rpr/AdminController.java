@@ -31,12 +31,13 @@ public class AdminController {
         lv.getItems().addAll(f);
     }
     public void submit(ActionEvent actionEvent) throws SQLException {
-        if(tf1.getText()!=null && datum.getValue()!=null){
-            tf2.setText(dao.dajTaj(tf1.getText(),datum.getValue().getDayOfMonth(),datum.getValue().getMonth().toString(),datum.getValue().getYear()));
+        if (tf1.getText() != null && datum.getValue() != null) {
+            tf2.setText(dao.dajTaj(tf1.getText(), datum.getValue().getDayOfMonth(), datum.getValue().getMonth().toString(), datum.getValue().getYear()));
+
+            lb3.setText(datum.getValue().getMonth().toString());
+            lv2.getItems().clear();
+            lv2.getItems().addAll(dao.dajMjesec(tf1.getText(), datum.getValue().getMonth().toString(), datum.getValue().getYear()));
         }
-        lb3.setText(datum.getValue().getMonth().toString());
-        lv2.getItems().clear();
-        lv2.getItems().addAll(dao.dajMjesec(tf1.getText(),datum.getValue().getMonth().toString(),datum.getValue().getYear()));
     }
     public void cya(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) tipka.getScene().getWindow();
@@ -50,8 +51,20 @@ public class AdminController {
         primaryStage.show();
     }
     public void brisi(ActionEvent actionEvent) throws IOException, SQLException {
-        /*if(tfdlt.getText()!=null){
+        if(tfdlt.getText()!=null){
             dao.brisanje(tfdlt.getText());
-        }*/
+            var f=dao.dajSve();
+            Collections.reverse(f);
+            lv.getItems().clear();
+            lv.getItems().addAll(f);
+        }
+    }
+    public void dodaj(ActionEvent actionEvent) throws IOException {
+        Stage primaryStage=new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/forma.fxml"));
+        primaryStage.setTitle("Clockify");
+        primaryStage.setScene(new Scene(root, 400, 350));
+        primaryStage.setResizable(false);
+        primaryStage.show();
     }
 }
