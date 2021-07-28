@@ -4,10 +4,22 @@
 #mniNew .accelerator-text{
 -fx-graphic: none;
 }
-#mniOpen > .label{
--fx-graphic: url("/img/open.png");
+#jezik > .label{
+-fx-graphic: url("/img/jezik.png");
 }
-#mniOpen .accelerator-text{
+#jezik .accelerator-text{
+-fx-graphic: none;
+}
+#ab > .label{
+-fx-graphic: url("/img/about.png");
+}
+#ab .accelerator-text{
+-fx-graphic: none;
+}
+#ex > .label{
+-fx-graphic: url("/img/exit.png");
+}
+#ex .accelerator-text{
 -fx-graphic: none;
 }
 #mniSave > .label{

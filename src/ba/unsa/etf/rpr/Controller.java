@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -39,6 +40,23 @@ public class Controller {
         );
         clock.setCycleCount(Animation.INDEFINITE);
         clock.play();
+        lbl.setOnKeyPressed(event -> {
+            if(event.getCode().equals(KeyCode.ENTER)){
+                pass.requestFocus();
+            }
+        });
+        pass.setOnKeyPressed(event -> {
+            if(event.getCode().equals(KeyCode.ENTER)){
+                login.requestFocus();
+                try {
+                    actionLogin(null);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
     public void actionExit(ActionEvent actionEvent) {
         System.exit(0);

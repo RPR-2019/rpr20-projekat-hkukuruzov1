@@ -22,33 +22,33 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu text="_File">
             <items>
-                  <Menu mnemonicParsing="false" text="Language">
+                  <Menu fx:id="jezik" text="_Language">
                     <items>
                         <MenuItem fx:id="eng" mnemonicParsing="false" onAction="#engleski" text="English" />
                       <MenuItem fx:id="bs" mnemonicParsing="false" onAction="#bosanski" text="Bosanski" />
                         <MenuItem fx:id="fr" mnemonicParsing="false" onAction="#francuski" text="Francais" />
                     </items>
                   </Menu>
-                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem text="_Close" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" onAction="#actionExit" text="Exit" />
+                  <MenuItem fx:id="ex" onAction="#actionExit" text="E_xit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu text="_Edit">
             <items>
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="View">
+            <Menu text="_View">
                <items>
                   <MenuItem mnemonicParsing="false" text="Close" />
                </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu text="_Help">
             <items>
-              <MenuItem fx:id="ab" mnemonicParsing="false" onAction="#about" text="About" />
+              <MenuItem fx:id="ab" onAction="#about" text="_About" />
             </items>
           </Menu>
         </menus>
