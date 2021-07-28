@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -22,7 +23,7 @@ public class AdminController {
     public List<String> o;
     public TextField tf1,tf2,tfdlt;
     public DatePicker datum;
-    public Button tipka,odoh,add,dlt;
+    public Button tipka,odoh,add,dlt,iz;
     public Label lb3;
     @FXML
     public void initialize() throws SQLException {
@@ -69,5 +70,13 @@ public class AdminController {
         primaryStage.setScene(new Scene(root, 400, 350));
         primaryStage.setResizable(false);
         primaryStage.show();
+    }
+    public void izvjestaj(ActionEvent actionEvent){
+        try {
+            new Izvjestaj().showReport(dao.getConnection());
+        } catch (JRException e1) {
+            e1.printStackTrace();
+        }
+
     }
 }

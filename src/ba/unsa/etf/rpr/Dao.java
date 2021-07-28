@@ -31,6 +31,9 @@ public class Dao {
         }
         return instance;
     }
+    public Connection getConnection(){
+        return conn;
+    }
     public boolean daLiPostojiKorisnik(String s1,String s2) throws SQLException {
         dajKorisnika.setString(1,s1);
         dajKorisnika.setString(2,s2);
