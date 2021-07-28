@@ -31,37 +31,37 @@
     </rowConstraints>
     <children>
         <ListView fx:id="lv" GridPane.rowIndex="1" GridPane.rowSpan="5" />
-        <Label text="Posljednje aktivnosti " GridPane.valignment="CENTER" />
+        <Label text="%pa" GridPane.valignment="CENTER" />
         <HBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <children>
-                <Label text="Pretraži po username " />
+                <Label text="%ppo" />
                 <TextField fx:id="tf1" />
             </children>
         </HBox>
         <HBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <children>
-                <Label text="Izaberi dan " />
+                <Label text="%id" />
                 <DatePicker fx:id="datum" />
-                <Button fx:id="tipka" mnemonicParsing="false" onAction="#submit" text="Pretraži" />
+                <Button fx:id="tipka" mnemonicParsing="false" onAction="#submit" text="%search" />
             </children>
         </HBox>
         <TextField fx:id="tf2" editable="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
         <ListView fx:id="lv2" GridPane.columnIndex="1" GridPane.rowIndex="5" />
       <HBox GridPane.columnIndex="1" GridPane.rowIndex="4">
          <children>
-              <Label text="Učinak zaposlenika za mjesec " />
+              <Label text="%uzam" />
               <Label fx:id="lb3" />
          </children>
       </HBox>
-        <Button fx:id="add" mnemonicParsing="false" onAction="#dodaj" text="Dodaj novog korisnika" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+        <Button fx:id="add" mnemonicParsing="false" onAction="#dodaj" text="%dnk" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
         <HBox styleClass="stil" GridPane.rowIndex="6">
             <children>
-                <Label text="Unesi username " />
+                <Label text="%uu" />
                 <TextField fx:id="tfdlt" />
-                <Button fx:id="dlt" mnemonicParsing="false" onAction="#brisi" text="Izbriši korisnika" />
+                <Button fx:id="dlt" mnemonicParsing="false" onAction="#brisi" text="%ik" />
             </children>
         </HBox>
-        <Button fx:id="odoh" mnemonicParsing="false" onAction="#cya" styleClass="logut" text="Logut" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+        <Button fx:id="odoh" mnemonicParsing="false" onAction="#cya" styleClass="logut" text="%logut" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
     </children>
     <padding>
         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

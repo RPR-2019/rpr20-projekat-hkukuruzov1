@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class Controller {
     public Button login;
@@ -23,6 +25,7 @@ public class Controller {
     public PasswordField pass;
     private Dao dao;
     public Label time;
+    public MenuItem eng,bs,fr;
     @FXML
     void initialize() throws SQLException {
     dao= Dao.getInstance();
@@ -48,8 +51,8 @@ public class Controller {
                 // do what you have to do
                 stage.close();
                 Stage primaryStage=new Stage();
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/fxml/admin.fxml"));
+                ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/admin.fxml"),bundle);
                 Parent root=loader.load();
                 primaryStage.setTitle("Clockify");
                 primaryStage.setScene(new Scene(root, 300, 350));
@@ -63,8 +66,8 @@ public class Controller {
                 // do what you have to do
                 stage.close();
                 Stage primaryStage=new Stage();
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/fxml/radnik.fxml"));
+                ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/radnik.fxml"),bundle);
                 Parent root=loader.load();
                 RadnoVrijemeController novoooo=loader.getController();
                 novoooo.postavi(this);
@@ -84,6 +87,36 @@ public class Controller {
             alert.setContentText("Netačni podaci!");
 
             alert.showAndWait();
+        }
+    }
+    public void engleski(ActionEvent actionEvent){
+        Stage stage = (Stage) login.getScene().getWindow();
+        Locale.setDefault(new Locale("en", "US"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavna.fxml"), ResourceBundle.getBundle("Translation"));
+        try {
+            stage.setScene(new Scene(loader.load(),400,350));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void bosanski(ActionEvent actionEvent){
+        Stage stage = (Stage) login.getScene().getWindow();
+        Locale.setDefault(new Locale("bs", "BA"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavna.fxml"), ResourceBundle.getBundle("Translation"));
+        try {
+            stage.setScene(new Scene(loader.load(),400,350));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void francuski(ActionEvent actionEvent){
+        Stage stage = (Stage) login.getScene().getWindow();
+        Locale.setDefault(new Locale("fr", "FR"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavna.fxml"), ResourceBundle.getBundle("Translation"));
+        try {
+            stage.setScene(new Scene(loader.load(),400,350));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

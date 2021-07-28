@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class AdminController {
     public ListView lv,lv2;
@@ -61,7 +62,9 @@ public class AdminController {
     }
     public void dodaj(ActionEvent actionEvent) throws IOException {
         Stage primaryStage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/forma.fxml"));
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/forma.fxml"),bundle);
+        Parent root=loader.load();
         primaryStage.setTitle("Clockify");
         primaryStage.setScene(new Scene(root, 400, 350));
         primaryStage.setResizable(false);

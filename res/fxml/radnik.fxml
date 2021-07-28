@@ -29,22 +29,22 @@
    <children>
       <ButtonBar GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <buttons>
-            <RadioButton fx:id="rw" mnemonicParsing="false" onAction="#kuci" text="Remote">
+            <RadioButton fx:id="rw" mnemonicParsing="false" onAction="#kuci" text="%remote">
                <toggleGroup>
                   <ToggleGroup fx:id="grupa" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="ow" mnemonicParsing="false" onAction="#firma" text="Onsite" toggleGroup="$grupa" />
+            <RadioButton fx:id="ow" mnemonicParsing="false" onAction="#firma" text="%onsite" toggleGroup="$grupa" />
          </buttons>
       </ButtonBar>
-      <Label text="Izaberi vrstu rada" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <Label text="%ivr" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <Button fx:id="ulaz" mnemonicParsing="false" onAction="#start" text="Početak" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <Button fx:id="izlaz" mnemonicParsing="false" onAction="#kraj" text="Kraj" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <Label text="Vrijeme" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <Button fx:id="ulaz" mnemonicParsing="false" onAction="#start" text="%pocetak" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Button fx:id="izlaz" mnemonicParsing="false" onAction="#kraj" text="%kraj" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Label text="%vrijeme" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
       <Label fx:id="time" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
    </children>
 </GridPane>

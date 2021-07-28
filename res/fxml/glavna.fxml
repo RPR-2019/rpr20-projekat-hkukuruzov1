@@ -24,9 +24,13 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="mniNew" mnemonicParsing="false" text="New" />
-                  <MenuItem fx:id="mniOpen" mnemonicParsing="false" text="Open" />
-                  <MenuItem fx:id="mniSave" mnemonicParsing="false" text="Save" />
+                  <Menu mnemonicParsing="false" text="Language">
+                    <items>
+                        <MenuItem fx:id="eng" mnemonicParsing="false" onAction="#engleski" text="English" />
+                      <MenuItem fx:id="bs" mnemonicParsing="false" onAction="#bosanski" text="Bosanski" />
+                        <MenuItem fx:id="fr" mnemonicParsing="false" onAction="#francuski" text="Francais" />
+                    </items>
+                  </Menu>
                   <MenuItem mnemonicParsing="false" text="Close" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#actionExit" text="Exit" />
@@ -61,15 +65,15 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="lbl" promptText="username">
+            <TextField fx:id="lbl" promptText="%username">
                <GridPane.margin>
                   <Insets left="15.0" right="15.0" />
                </GridPane.margin></TextField>
-            <PasswordField fx:id="pass" promptText="password" GridPane.rowIndex="1">
+            <PasswordField fx:id="pass" promptText="%password" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="15.0" right="15.0" />
                </GridPane.margin></PasswordField>
-            <Button fx:id="login" mnemonicParsing="false" onAction="#actionLogin" styleClass="login" text="Login" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="login" mnemonicParsing="false" onAction="#actionLogin" styleClass="login" text="%login" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -86,7 +90,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Aplikacija pokrenuta.">
+            <Label text="%apok">
                <padding>
                   <Insets left="5.0" right="5.0" />
                </padding>
