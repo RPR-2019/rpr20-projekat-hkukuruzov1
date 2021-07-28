@@ -108,4 +108,18 @@ public class Dao {
         brisiKorisnika.setString(1,a);
         brisiKorisnika.executeUpdate();
     }
+    public boolean ubaci(Korisnik k){
+        try {
+            ubaciKorisnika.setString(1, k.getUsername());
+            ubaciKorisnika.setString(2, k.getPassword());
+            ubaciKorisnika.setInt(3, k.getAdmin());
+            ubaciKorisnika.setString(4, k.getIme());
+            ubaciKorisnika.setString(5, k.getPrezime());
+            ubaciKorisnika.executeUpdate();
+        }
+            catch (SQLException throwables) {
+            return false;
+        }
+            return true;
+    }
 }
