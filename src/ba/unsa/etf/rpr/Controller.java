@@ -19,13 +19,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
+
 public class Controller {
     public Button login;
     public TextField lbl;
     public PasswordField pass;
     private Dao dao;
     public Label time;
-    public MenuItem eng,bs,fr;
+    public MenuItem eng,bs,fr,ab;
     @FXML
     void initialize() throws SQLException {
     dao= Dao.getInstance();
@@ -118,5 +120,16 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void about(ActionEvent actionEvent) throws IOException {
+        Stage primaryStage=new Stage();
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/about.fxml"),bundle);
+        Parent root=loader.load();
+        primaryStage.setTitle("About");
+        primaryStage.setResizable(false);
+        primaryStage.setScene(new Scene(root,300,250));
+        root.requestFocus();
+        primaryStage.show();
     }
 }

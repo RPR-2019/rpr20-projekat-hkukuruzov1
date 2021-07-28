@@ -25,10 +25,6 @@ U
 %src/ba/unsa/etf/rpr/RadnoVrijeme.java,4\1\415d2e8b5e79c9a5121eae50c75246facf51fc92
 _
 /src/ba/unsa/etf/rpr/RadnoVrijemeController.java,b\9\b9095d9fc2f1249d9260153a7809feabe54efb01
-D
-res/fxml/glavna.fxml,4\6\46205856eebc4febaba69b40e982cc6ab2568abf
-A
-res/css/admin.css,c\d\cd4b7562570638dfb6613318dd024c0b42c7930a
 L
 src/ba/unsa/etf/rpr/Dao.java,0\8\08ba4a142df355f54d09a1b570cf0d936a6cc53c
 X
