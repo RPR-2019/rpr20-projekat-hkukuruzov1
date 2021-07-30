@@ -6,6 +6,8 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class FormaController {
     public Button ex,sb;
@@ -28,18 +30,20 @@ public class FormaController {
                 if(!dao.ubaci(new Korisnik(tf1.getText(),p1.getText(),myInt,tf2.getText(),tf3.getText())))
                 {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Upozorenje");
-                    alert.setHeaderText("Upozorenje o novom korisniku");
-                    alert.setContentText("Username nije unikatan!");
+                    ResourceBundle rb = ResourceBundle.getBundle("Translation", Locale.getDefault());
+                    alert.setTitle(rb.getString("Upozorenje"));
+                    alert.setHeaderText(rb.getString("uonk"));
+                    alert.setContentText(rb.getString("usera"));
 
                     alert.showAndWait();
                 }
             }
             else{
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Upozorenje");
-                alert.setHeaderText("Upozorenje o šifri");
-                alert.setContentText("Šifre se ne poklapaju!");
+                ResourceBundle rb = ResourceBundle.getBundle("Translation", Locale.getDefault());
+                alert.setTitle(rb.getString("Upozorenje"));
+                alert.setHeaderText(rb.getString("uonk"));
+                alert.setContentText(rb.getString("ssn"));
 
                 alert.showAndWait();
             }

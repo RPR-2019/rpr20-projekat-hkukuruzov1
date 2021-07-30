@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 
@@ -43,13 +45,14 @@ public class AdminController {
     }
     public void cya(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) tipka.getScene().getWindow();
-        // do what you have to do
         stage.close();
         Stage primaryStage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/glavna.fxml"));
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/glavna.fxml"),bundle);
         primaryStage.setTitle("Clockify");
         primaryStage.setScene(new Scene(root, 400, 350));
         primaryStage.setResizable(false);
+        primaryStage.getIcons().add(new Image("/img/Ikona.png"));
         primaryStage.show();
     }
     public void brisi(ActionEvent actionEvent) throws IOException, SQLException {
@@ -69,7 +72,9 @@ public class AdminController {
         primaryStage.setTitle("Clockify");
         primaryStage.setScene(new Scene(root, 400, 350));
         primaryStage.setResizable(false);
-        primaryStage.show();
+        primaryStage.getIcons().add(new Image("/img/Ikona.png"));
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+        primaryStage.showAndWait();
     }
     public void izvjestaj(ActionEvent actionEvent){
         try {

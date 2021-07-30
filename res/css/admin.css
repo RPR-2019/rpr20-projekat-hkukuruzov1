@@ -5,3 +5,7 @@
 .stil{
 -fx-alignment: center ;
 }
+#brdPane{
+    -fx-background-image: url("/img/background.jpg");
+    -fx-background-size: 100% 100%;
+}

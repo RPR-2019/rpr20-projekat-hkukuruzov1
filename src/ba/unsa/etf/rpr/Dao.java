@@ -10,13 +10,13 @@ import java.util.List;
 public class Dao {
     private Connection conn;
     private static Dao instance;
-    private PreparedStatement dajKorisnika,ubaciRadnoVrijeme,dajSve,dajImeiPrezime,dajDan,dajSveUMjesecu,brisiKorisnika,brisiKorisnika1,ubaciKorisnika;
+    private PreparedStatement dajKorisnika,ubaciRadnoVrijeme,dajSve,dajImeiPrezime,dajDan,dajSveUMjesecu,brisiKorisnika,brisiKorisnika1,ubaciKorisnika,nullKraj,ubaciVrijeme;
 
     private Dao() throws SQLException {
         String url="jdbc:sqlite:korisnici.db";
         conn= DriverManager.getConnection(url);
         dajKorisnika=conn.prepareStatement("SELECT * FROM korisnici WHERE username=? and password=?");
-        ubaciRadnoVrijeme=conn.prepareStatement("INSERT INTO radnovrijeme values(?,?,?,?,?,?,?)");
+        ubaciRadnoVrijeme=conn.prepareStatement("UPDATE radnovrijeme SET kraj=? WHERE id=? and kraj IS NULL");
         dajSve=conn.prepareStatement("SELECT * FROM radnovrijeme");
         dajImeiPrezime=conn.prepareStatement("SELECT ime,prezime from korisnici where username=?");
         dajDan=conn.prepareStatement("SELECT * from radnovrijeme where id=? and dan=? and mjesec=? and godina=?");
@@ -24,6 +24,8 @@ public class Dao {
         brisiKorisnika=conn.prepareStatement("DELETE from korisnici where username=?");
         brisiKorisnika1=conn.prepareStatement("DELETE from radnovrijeme where id=?");
         ubaciKorisnika=conn.prepareStatement("INSERT INTO korisnici(username,password,admin,ime,prezime) values(?,?,?,?,?)");
+        nullKraj=conn.prepareStatement("SELECT * from radnovrijeme where id=? and kraj IS NULL");
+        ubaciVrijeme=conn.prepareStatement("INSERT INTO radnovrijeme(id,pocetak,kraj,vrstarada,dan,mjesec,godina) values(?,?,?,?,?,?,?)");
     }
     public static Dao getInstance() throws SQLException {
         if(instance==null){
@@ -64,13 +66,8 @@ public class Dao {
         return null;
     }
     public void ubaciVrijeme(RadnoVrijeme rw) throws SQLException {
-        ubaciRadnoVrijeme.setString(1,rw.getId());
-        ubaciRadnoVrijeme.setString(2,rw.getPocetak());
-        ubaciRadnoVrijeme.setString(3,rw.getKraj());
-        ubaciRadnoVrijeme.setString(4,rw.getVrstaRada().toString());
-        ubaciRadnoVrijeme.setInt(5,rw.getDan());
-        ubaciRadnoVrijeme.setString(6,rw.getMjesec());
-        ubaciRadnoVrijeme.setInt(7,rw.getGodina());
+        ubaciRadnoVrijeme.setString(1,rw.getKraj());
+        ubaciRadnoVrijeme.setString(2,rw.getId());
         ubaciRadnoVrijeme.executeUpdate();
     }
     public List<String> dajSve() throws SQLException {
@@ -124,5 +121,23 @@ public class Dao {
             return false;
         }
             return true;
+    }
+    public boolean imaLiNule(String k) throws SQLException {
+        nullKraj.setString(1,k);
+        var rs=nullKraj.executeQuery();
+        while(rs.next()){
+            return true;
+        }
+        return false;
+    }
+    public void ubaciVrijeme1(RadnoVrijeme k) throws SQLException {
+        ubaciVrijeme.setString(1,k.getId());
+        ubaciVrijeme.setString(2,k.getPocetak());
+        ubaciVrijeme.setString(3,k.getKraj());
+        ubaciVrijeme.setString(4,k.getVrstaRada().toString());
+        ubaciVrijeme.setInt(5,k.getDan());
+        ubaciVrijeme.setString(6,k.getMjesec());
+        ubaciVrijeme.setInt(7,k.getGodina());
+        ubaciVrijeme.executeUpdate();
     }
 }

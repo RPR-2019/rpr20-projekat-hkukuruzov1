@@ -9,7 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -78,6 +80,7 @@ public class Controller {
                 primaryStage.setScene(new Scene(root, 300, 350));
                 primaryStage.setMaximized(true);
                 primaryStage.setResizable(false);
+                primaryStage.getIcons().add(new Image("/img/Ikona.png"));
                 primaryStage.show();
             }
             else{
@@ -92,9 +95,10 @@ public class Controller {
                 RadnoVrijemeController novoooo=loader.getController();
                 novoooo.postavi(this);
                 primaryStage.setTitle("Clockify");
-                primaryStage.setScene(new Scene(root, 350, 200));
+                primaryStage.setScene(new Scene(root, 450, 200));
                 primaryStage.setMinHeight(200);
-                primaryStage.setMinWidth(350);
+                primaryStage.setMinWidth(450);
+                primaryStage.getIcons().add(new Image("/img/Ikona.png"));
                 primaryStage.show();
             }
         }
@@ -102,10 +106,13 @@ public class Controller {
             lbl.textProperty().setValue("");
             pass.textProperty().setValue("");
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Greška prilikom autentikacije!");
-            alert.setContentText("Netačni podaci!");
-
+            ResourceBundle rb = ResourceBundle.getBundle("Translation", Locale.getDefault());
+            alert.setTitle(rb.getString("Error"));
+            alert.setHeaderText(rb.getString("gpa"));
+            alert.setContentText(rb.getString("np"));
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(this.getClass().getResource("/img/Ikona.png").toString()));
+            alert.initModality(Modality.APPLICATION_MODAL);
             alert.showAndWait();
         }
     }
@@ -148,6 +155,8 @@ public class Controller {
         primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root,300,250));
         root.requestFocus();
-        primaryStage.show();
+        primaryStage.getIcons().add(new Image("/img/Ikona.png"));
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+        primaryStage.showAndWait();
     }
 }

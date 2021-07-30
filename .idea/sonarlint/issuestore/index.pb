@@ -29,3 +29,7 @@ L
 src/ba/unsa/etf/rpr/Dao.java,0\8\08ba4a142df355f54d09a1b570cf0d936a6cc53c
 X
 (src/ba/unsa/etf/rpr/FormaController.java,d\e\de8faf0080cf8b485ebe826fde553bc4c61309f6
+R
+"src/ba/unsa/etf/rpr/Izvjestaj.java,a\b\abb9cf1e23a695676445b39a9c2d5775d1e27606
+m
+=.idea/libraries/net_sf_jasperreports_jasperreports_6_16_0.xml,e\e\ee91da85f373b80fa9a95a7ebeaf07015e6a4105
