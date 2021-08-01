@@ -1,6 +1,0 @@
-
-P
-java:S1128
-"3Remove this unused import 'java.sql.DriverManager'.(“£°8Ôı¹«/
-M
-java:S1128	"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8Ôı¹«/

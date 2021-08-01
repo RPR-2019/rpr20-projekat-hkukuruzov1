@@ -1,0 +1,42 @@
+
+q
+java:S1104"OMake lbl a static final constant or non-public and provide accessors if needed.(úšæ†ûÿÿÿÿ8Ÿ•ÈÛ«/
+<
+java:S1659!" Declare "fr" on a separate line.(ƒ·Ñq8°­º±¯/
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜Ü¥Üüÿÿÿÿ8ö×æ¶¯/
+U
+java:S1172"2Remove this unused method parameter "actionEvent".(õª¢Åùÿÿÿÿ8°­º±¯/
+n
+java:S1104"QMake login a static final constant or non-public and provide accessors if needed.(ß‘û¸8“¿žÛ«/
+r
+java:S1104 "PMake time a static final constant or non-public and provide accessors if needed.(¸™¾Ûýÿÿÿÿ8—»•Ž¬/
+O
+java:S1172w"2Remove this unused method parameter "actionEvent".(ƒ­ñÈ8°­º±¯/
+k
+java:S1192S"ODefine a constant instead of duplicating this literal "/img/Ikona.png" 4 times.(Ï‚ª8ÙŒ½±¯/
+O
+java:S1172?"2Remove this unused method parameter "actionEvent".(”Ðù8è§òÝ«/
+n
+java:S1192z"RDefine a constant instead of duplicating this literal "/fxml/glavna.fxml" 3 times.(…þ8°­º±¯/
+<
+java:S1659!" Declare "bs" on a separate line.(ƒ·Ñq8°­º±¯/
+j
+java:S1104!"NMake ab a static final constant or non-public and provide accessors if needed.(ƒ·Ñq8°­º±¯/
+<
+java:S1659!" Declare "ab" on a separate line.(ƒ·Ñq8°­º±¯/
+j
+java:S1104!"NMake bs a static final constant or non-public and provide accessors if needed.(ƒ·Ñq8°­º±¯/
+j
+java:S1104!"NMake fr a static final constant or non-public and provide accessors if needed.(ƒ·Ñq8°­º±¯/
+m
+java:S1104"PMake pass a static final constant or non-public and provide accessors if needed.(¥â™—8è§òÝ«/
+T
+java:S1172B"2Remove this unused method parameter "actionEvent".(œÐ¨„þÿÿÿÿ8è§òÝ«/
+U
+java:S1172‹"2Remove this unused method parameter "actionEvent".(øöºÈþÿÿÿÿ8°­º±¯/
+U
+java:S1172•"2Remove this unused method parameter "actionEvent".(¡²œšÿÿÿÿÿ8°­º±¯/
+i
+java:S1192L"LDefine a constant instead of duplicating this literal "Translation" 7 times.(“òáÐ8°­º±¯/
+k
+java:S1104!"OMake eng a static final constant or non-public and provide accessors if needed.(ƒ·Ñq8°­º±¯/
