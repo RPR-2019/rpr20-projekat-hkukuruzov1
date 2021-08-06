@@ -4,10 +4,8 @@
     -fx-background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, repeat-x, repeat-x;
 
     -fx-background-image:
-          url("/img/cityscape/layer_06_1920x1080.png"),
-                url("/img/layer_05_1920x1080.png"),
-                url("/img/layer_04_1920x1080.png"),
-                url("/img/layer_03_1920x1080.png"),
-                url("/img/layer_02_1920x1080.png"),
-                url("/img/layer_01_1920x1080.png");
+          url("/img/mov1.png"),
+           url("/img/mov2.png"),
+            url("/img/mov3.png");
+
 }

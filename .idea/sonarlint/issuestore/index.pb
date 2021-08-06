@@ -25,8 +25,6 @@ h
 8src/main/java/ba/unsa/etf/rpr/Controller/Controller.java,4\0\404026edc928988e4855738349ac83c404914597
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-C
-res/fxml/about.fxml,a\c\ac6bb5c6cc277e77e586dffbf3279bd756cbe0ee
 R
 "src/main/java/META-INF/MANIFEST.MF,6\3\63ef5783cbf71fdf39c1fd6ae6873fd812259930
 €
