@@ -1,37 +1,37 @@
 package ba.unsa.etf.rpr;
 
-public class Korisnik {
+public class User {
     private String username;
     private String password;
     private int admin;
-    private String ime;
-    private String prezime;
+    private String name;
+    private String surname;
 
-    public Korisnik(String username, String password, int admin, String ime, String prezime) {
+    public User(String username, String password, int admin, String name, String surname) {
         this.username = username;
         this.password = password;
         this.admin = admin;
-        this.ime = ime;
-        this.prezime = prezime;
+        this.name = name;
+        this.surname = surname;
     }
 
-    public String getIme() {
-        return ime;
+    public String getName() {
+        return name;
     }
 
-    public void setIme(String ime) {
-        this.ime = ime;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPrezime() {
-        return prezime;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setPrezime(String prezime) {
-        this.prezime = prezime;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public Korisnik() {
+    public User() {
     }
 
     public String getUsername() {

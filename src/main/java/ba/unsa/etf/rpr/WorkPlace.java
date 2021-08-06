@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-public enum mjestoRada {
+public enum WorkPlace {
     REMOTE,ONSITE;
 
     @Override

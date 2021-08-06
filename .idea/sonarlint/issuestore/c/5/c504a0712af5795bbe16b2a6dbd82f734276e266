@@ -1,44 +1,44 @@
 
-k
-java:S1104 "PMake ulaz a static final constant or non-public and provide accessors if needed.(€á—óıÿÿÿÿ
-g
-java:S1104!"QMake izlaz a static final constant or non-public and provide accessors if needed.(Ôá†Ù
-d
-java:S1104'"NMake c1 a static final constant or non-public and provide accessors if needed.(©ª×¹
-i
-java:S1104#"NMake ow a static final constant or non-public and provide accessors if needed.(è“¾úÿÿÿÿ
-N
-java:S1172€"2Remove this unused method parameter "actionEvent".(™şƒùÿÿÿÿ
-i
-java:S1104""NMake rw a static final constant or non-public and provide accessors if needed.(üùÏ˜ıÿÿÿÿ
-f
-java:S1192F"KDefine a constant instead of duplicating this literal "Upozorenje" 4 times.(£©ûÿÿÿÿ
-U
-java:S1172ˆ"2Remove this unused method parameter "actionEvent".(½Š¨Ÿùÿÿÿÿ8ÀÀ¢²¯/
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜Ü¥Üüÿÿÿÿ8—åæ¶¯/
-l
-java:S1192K"ODefine a constant instead of duplicating this literal "/img/Ikona.png" 5 times.(áˆÊ8ÃÅ¶¯/
-M
-java:S11728"2Remove this unused method parameter "actionEvent".( ‡¦÷úÿÿÿÿ
-k
-java:S1104%"PMake time a static final constant or non-public and provide accessors if needed.(¸™¾Ûıÿÿÿÿ
-]
-java:S1126„"AReplace this if-then-else statement by a single return statement.(ÖØÕöıÿÿÿÿ
-H
-java:S1172P"2Remove this unused method parameter "actionEvent".(²×ïß
-i
-java:S1192E"LDefine a constant instead of duplicating this literal "Translation" 5 times.(¦çäõ8Şï™¶¯/
-]
-java:S1858R"@"format" returns a string, there's no need to call "toString()".(–’¾î8‡æ‚—°/
-H
-java:S1172}"2Remove this unused method parameter "actionEvent".(«èâ 
-_
-java:S1192."IDefine a constant instead of duplicating this literal "HH:mm:ss" 3 times.(¹Ø³
-L
-java:S1066U"/Merge this if statement with the enclosing one.(§úÎî8™ïƒ¶¯/
 l
 java:S1104$"QMake aktiv a static final constant or non-public and provide accessors if needed.(ËáÖ©ùÿÿÿÿ
 e
 java:S1104&"OMake rad a static final constant or non-public and provide accessors if needed.(‰œ€ş
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜Ü¥Üüÿÿÿÿ8—åæ¶¯/
+g
+java:S1104!"QMake izlaz a static final constant or non-public and provide accessors if needed.(Ôá†Ù
+]
+java:S1126„"AReplace this if-then-else statement by a single return statement.(ÖØÕöıÿÿÿÿ
 ]
 java:S1858;"@"format" returns a string, there's no need to call "toString()".(‘•°Ù8‡æ‚—°/
+]
+java:S1858R"@"format" returns a string, there's no need to call "toString()".(–’¾î8‡æ‚—°/
+U
+java:S1172ˆ"2Remove this unused method parameter "actionEvent".(½Š¨Ÿùÿÿÿÿ8ÀÀ¢²¯/
+L
+java:S1066U"/Merge this if statement with the enclosing one.(§úÎî8™ïƒ¶¯/
+f
+java:S1192F"KDefine a constant instead of duplicating this literal "Upozorenje" 4 times.(£©ûÿÿÿÿ
+_
+java:S1192."IDefine a constant instead of duplicating this literal "HH:mm:ss" 3 times.(¹Ø³
+l
+java:S1192K"ODefine a constant instead of duplicating this literal "/img/Ikona.png" 5 times.(áˆÊ8ÃÅ¶¯/
+H
+java:S1172P"2Remove this unused method parameter "actionEvent".(²×ïß
+H
+java:S1172}"2Remove this unused method parameter "actionEvent".(«èâ 
+i
+java:S1104""NMake rw a static final constant or non-public and provide accessors if needed.(üùÏ˜ıÿÿÿÿ
+i
+java:S1192E"LDefine a constant instead of duplicating this literal "Translation" 5 times.(¦çäõ8Şï™¶¯/
+k
+java:S1104%"PMake time a static final constant or non-public and provide accessors if needed.(¸™¾Ûıÿÿÿÿ
+N
+java:S1172€"2Remove this unused method parameter "actionEvent".(™şƒùÿÿÿÿ
+d
+java:S1104'"NMake c1 a static final constant or non-public and provide accessors if needed.(©ª×¹
+i
+java:S1104#"NMake ow a static final constant or non-public and provide accessors if needed.(è“¾úÿÿÿÿ
+k
+java:S1104 "PMake ulaz a static final constant or non-public and provide accessors if needed.(€á—óıÿÿÿÿ
+M
+java:S11728"2Remove this unused method parameter "actionEvent".( ‡¦÷úÿÿÿÿ

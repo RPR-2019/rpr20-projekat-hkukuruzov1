@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="grpane" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.Controller.RadnoVrijemeController">
+<GridPane fx:id="grpane" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.Controller.WorkTimeController">
     <stylesheets>
-        <URL value="@/css/radnik.css" />
+        <URL value="@/css/worker.css" />
     </stylesheets>
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" />
@@ -29,12 +29,12 @@
    <children>
       <ButtonBar GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <buttons>
-            <RadioButton fx:id="rw" mnemonicParsing="false" onAction="#kuci" text="%remote">
+            <RadioButton fx:id="rw" mnemonicParsing="false" onAction="#homeWork" text="%remote">
                <toggleGroup>
                   <ToggleGroup fx:id="grupa" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="ow" mnemonicParsing="false" onAction="#firma" text="%onsite" toggleGroup="$grupa" />
+            <RadioButton fx:id="ow" mnemonicParsing="false" onAction="#onSite" text="%onsite" toggleGroup="$grupa" />
          </buttons>
       </ButtonBar>
       <Label text="%ivr" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -42,11 +42,11 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <Button fx:id="ulaz" mnemonicParsing="false" onAction="#start" text="%pocetak" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <Button fx:id="izlaz" mnemonicParsing="false" onAction="#kraj" text="%kraj" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Button fx:id="in" mnemonicParsing="false" onAction="#startWorking" text="%pocetak" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Button fx:id="out" mnemonicParsing="false" onAction="#endWorking" text="%kraj" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <Label text="%vrijeme" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
       <Label fx:id="time" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-      <Button fx:id="logut" mnemonicParsing="false" onAction="#cya" text="%logut" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+      <Button fx:id="logut" mnemonicParsing="false" onAction="#logut" text="%logut" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
          <GridPane.margin>
             <Insets bottom="5.0" right="5.0" top="5.0" />
          </GridPane.margin></Button>

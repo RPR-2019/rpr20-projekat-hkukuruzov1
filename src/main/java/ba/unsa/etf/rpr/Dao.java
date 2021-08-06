@@ -36,7 +36,7 @@ public class Dao {
     public Connection getConnection(){
         return conn;
     }
-    public boolean daLiPostojiKorisnik(String s1,String s2) throws SQLException {
+    public boolean doesUserExist(String s1, String s2) throws SQLException {
         dajKorisnika.setString(1,s1);
         dajKorisnika.setString(2,s2);
         var rs=dajKorisnika.executeQuery();
@@ -46,7 +46,7 @@ public class Dao {
             return false;
 
     }
-    public boolean daLiJeAdmin(String s1,String s2) throws SQLException {
+    public boolean isItAdmin(String s1, String s2) throws SQLException {
         dajKorisnika.setString(1,s1);
         dajKorisnika.setString(2,s2);
         var rs=dajKorisnika.executeQuery();
@@ -56,21 +56,21 @@ public class Dao {
         }
         return false;
     }
-    public Korisnik dajKorisnika(String s1,String s2) throws SQLException {
+    public User getUser(String s1, String s2) throws SQLException {
         dajKorisnika.setString(1,s1);
         dajKorisnika.setString(2,s2);
         var rs=dajKorisnika.executeQuery();
         while(rs.next()){
-            return new Korisnik(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getString(5));
+            return new User(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getString(5));
         }
         return null;
     }
-    public void ubaciVrijeme(RadnoVrijeme rw) throws SQLException {
-        ubaciRadnoVrijeme.setString(1,rw.getKraj());
+    public void inputTime(WorkTime rw) throws SQLException {
+        ubaciRadnoVrijeme.setString(1,rw.getEnd());
         ubaciRadnoVrijeme.setString(2,rw.getId());
         ubaciRadnoVrijeme.executeUpdate();
     }
-    public List<String> dajSve() throws SQLException {
+    public List<String> getAllData() throws SQLException {
         List<String> lista=new ArrayList<>();
         var f=dajSve.executeQuery();
         while(f.next()){
@@ -80,7 +80,7 @@ public class Dao {
         }
         return lista;
     }
-    public String dajTaj(String i,int d,String m,int g) throws SQLException {
+    public String getSpecifcUser(String i, int d, String m, int g) throws SQLException {
         dajDan.setString(1,i);
         dajDan.setInt(2,d);
         dajDan.setString(3,m);
@@ -91,7 +91,7 @@ public class Dao {
         }
         return "Korisnik nije radio tog dana!";
     }
-    public List<String> dajMjesec(String u,String m,int g) throws SQLException {
+    public List<String> getMonth(String u, String m, int g) throws SQLException {
         dajSveUMjesecu.setString(1,u);
         dajSveUMjesecu.setString(2,m);
         dajSveUMjesecu.setInt(3,g);
@@ -102,19 +102,19 @@ public class Dao {
         }
         return ret;
     }
-    public void brisanje(String a) throws SQLException {
+    public void deleting(String a) throws SQLException {
         brisiKorisnika1.setString(1,a);
         brisiKorisnika1.executeUpdate();
         brisiKorisnika.setString(1,a);
         brisiKorisnika.executeUpdate();
     }
-    public boolean ubaci(Korisnik k){
+    public boolean addUser(User k){
         try {
             ubaciKorisnika.setString(1, k.getUsername());
             ubaciKorisnika.setString(2, k.getPassword());
             ubaciKorisnika.setInt(3, k.getAdmin());
-            ubaciKorisnika.setString(4, k.getIme());
-            ubaciKorisnika.setString(5, k.getPrezime());
+            ubaciKorisnika.setString(4, k.getName());
+            ubaciKorisnika.setString(5, k.getSurname());
             ubaciKorisnika.executeUpdate();
         }
             catch (SQLException throwables) {
@@ -122,7 +122,7 @@ public class Dao {
         }
             return true;
     }
-    public boolean imaLiNule(String k) throws SQLException {
+    public boolean workTimeCheck(String k) throws SQLException {
         nullKraj.setString(1,k);
         var rs=nullKraj.executeQuery();
         while(rs.next()){
@@ -130,14 +130,14 @@ public class Dao {
         }
         return false;
     }
-    public void ubaciVrijeme1(RadnoVrijeme k) throws SQLException {
+    public void inputTimeNew(WorkTime k) throws SQLException {
         ubaciVrijeme.setString(1,k.getId());
-        ubaciVrijeme.setString(2,k.getPocetak());
-        ubaciVrijeme.setString(3,k.getKraj());
-        ubaciVrijeme.setString(4,k.getVrstaRada().toString());
-        ubaciVrijeme.setInt(5,k.getDan());
-        ubaciVrijeme.setString(6,k.getMjesec());
-        ubaciVrijeme.setInt(7,k.getGodina());
+        ubaciVrijeme.setString(2,k.getStart());
+        ubaciVrijeme.setString(3,k.getEnd());
+        ubaciVrijeme.setString(4,k.getTypeOfWork().toString());
+        ubaciVrijeme.setInt(5,k.getDay());
+        ubaciVrijeme.setString(6,k.getMonth());
+        ubaciVrijeme.setInt(7,k.getYear());
         ubaciVrijeme.executeUpdate();
     }
 }

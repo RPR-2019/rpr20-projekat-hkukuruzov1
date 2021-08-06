@@ -1,40 +1,40 @@
 
 P
 java:S1128";Remove this unused import 'javafx.application.Application'.(í™þj
+n
+java:S1104 "SMake content a static final constant or non-public and provide accessors if needed.(€ß²ƒÿÿÿÿÿ
 P
-java:S1128"5Remove this unused import 'java.util.ResourceBundle'.(ýÆ£¯øÿÿÿÿ
+java:S1128"5Remove this unused import 'javax.swing.text.Element'.(æÆÍ‚ýÿÿÿÿ
+c
+java:S1075>"ARefactor your code to get this URI from a customizable parameter.(Å™ð‘ùÿÿÿÿ8åä‚—°/
+M
+java:S1172:"2Remove this unused method parameter "actionEvent".(Âæ÷¾ýÿÿÿÿ
 C	java:S108?")Either remove or fill this block of code.(„ØÍ£ùÿÿÿÿ
-a
-java:S11920"KDefine a constant instead of duplicating this literal "px bottom," 5 times.(¨¶åã
-U
-java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ
-h
-java:S1104"RMake gitBtn a static final constant or non-public and provide accessors if needed.(æ€‹æ
+H
+java:S1128
+"-Remove this unused import 'javafx.fxml.FXML'.(ÃÚ¢„þÿÿÿÿ
 E
 java:S1128"/Remove this unused import 'javafx.scene.Scene'.(Õü²
-T
-java:S1128"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ
+P
+java:S1128"5Remove this unused import 'java.util.ResourceBundle'.(ýÆ£¯øÿÿÿÿ
+J
+java:S1128"4Remove this unused import 'java.io.FileInputStream'.(˜³ÉÓ
+U
+java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ
+\
+java:S11920"FDefine a constant instead of duplicating this literal "left " 6 times.(¨¶åã
 K
 java:S1128"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç
 J
 java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ
-c
-java:S1075>"ARefactor your code to get this URI from a customizable parameter.(Å™ð‘ùÿÿÿÿ8åä‚—°/
-H
-java:S1128"-Remove this unused import 'java.util.Locale'.(åð×±ûÿÿÿÿ
+a
+java:S11920"KDefine a constant instead of duplicating this literal "px bottom," 5 times.(¨¶åã
 N
 java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ
-P
-java:S1128"5Remove this unused import 'javax.swing.text.Element'.(æÆÍ‚ýÿÿÿÿ
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜Ü¥Üüÿÿÿÿ8’×æ¶¯/
-\
-java:S11920"FDefine a constant instead of duplicating this literal "left " 6 times.(¨¶åã
-n
-java:S1104 "SMake content a static final constant or non-public and provide accessors if needed.(€ß²ƒÿÿÿÿÿ
-M
-java:S1172:"2Remove this unused method parameter "actionEvent".(Âæ÷¾ýÿÿÿÿ
-J
-java:S1128"4Remove this unused import 'java.io.FileInputStream'.(˜³ÉÓ
+h
+java:S1104"RMake gitBtn a static final constant or non-public and provide accessors if needed.(æ€‹æ
 H
-java:S1128
-"-Remove this unused import 'javafx.fxml.FXML'.(ÃÚ¢„þÿÿÿÿ
+java:S1128"-Remove this unused import 'java.util.Locale'.(åð×±ûÿÿÿÿ
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜Ü¥Üüÿÿÿÿ8’×æ¶¯/
+T
+java:S1128"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ

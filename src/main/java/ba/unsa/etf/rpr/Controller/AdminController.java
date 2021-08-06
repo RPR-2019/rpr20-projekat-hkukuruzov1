@@ -1,9 +1,7 @@
 package ba.unsa.etf.rpr.Controller;
 
 import ba.unsa.etf.rpr.Dao;
-import ba.unsa.etf.rpr.Izvjestaj;
-import javafx.beans.Observable;
-import javafx.collections.ObservableList;
+import ba.unsa.etf.rpr.Report;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,49 +25,49 @@ public class AdminController {
     public List<String> o;
     public TextField tf1,tf2,tfdlt;
     public DatePicker datum;
-    public Button tipka,odoh,add,dlt,iz;
+    public Button btt,ex,add,dlt,iz;
     public Label lb3;
     @FXML
     public void initialize() throws SQLException {
         dao=Dao.getInstance();
-        var f=dao.dajSve();
+        var f=dao.getAllData();
         Collections.reverse(f);
         lv.getItems().addAll(f);
     }
     public void submit(ActionEvent actionEvent) throws SQLException {
         if (tf1.getText() != null && datum.getValue() != null) {
-            tf2.setText(dao.dajTaj(tf1.getText(), datum.getValue().getDayOfMonth(), datum.getValue().getMonth().toString(), datum.getValue().getYear()));
+            tf2.setText(dao.getSpecifcUser(tf1.getText(), datum.getValue().getDayOfMonth(), datum.getValue().getMonth().toString(), datum.getValue().getYear()));
 
             lb3.setText(datum.getValue().getMonth().toString());
             lv2.getItems().clear();
-            lv2.getItems().addAll(dao.dajMjesec(tf1.getText(), datum.getValue().getMonth().toString(), datum.getValue().getYear()));
+            lv2.getItems().addAll(dao.getMonth(tf1.getText(), datum.getValue().getMonth().toString(), datum.getValue().getYear()));
         }
     }
-    public void cya(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) tipka.getScene().getWindow();
+    public void logut(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) btt.getScene().getWindow();
         stage.close();
         Stage primaryStage=new Stage();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/glavna.fxml"),bundle);
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/main.fxml"),bundle);
         primaryStage.setTitle("Clockify");
         primaryStage.setScene(new Scene(root, 400, 350));
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image("/img/Ikona.png"));
         primaryStage.show();
     }
-    public void brisi(ActionEvent actionEvent) throws IOException, SQLException {
+    public void delete(ActionEvent actionEvent) throws IOException, SQLException {
         if(tfdlt.getText()!=null){
-            dao.brisanje(tfdlt.getText());
-            var f=dao.dajSve();
+            dao.deleting(tfdlt.getText());
+            var f=dao.getAllData();
             Collections.reverse(f);
             lv.getItems().clear();
             lv.getItems().addAll(f);
         }
     }
-    public void dodaj(ActionEvent actionEvent) throws IOException {
+    public void addUser(ActionEvent actionEvent) throws IOException {
         Stage primaryStage=new Stage();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/forma.fxml"),bundle);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/form.fxml"),bundle);
         Parent root=loader.load();
         primaryStage.setTitle("Clockify");
         primaryStage.setScene(new Scene(root, 400, 350));
@@ -78,9 +76,9 @@ public class AdminController {
         primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.showAndWait();
     }
-    public void izvjestaj(ActionEvent actionEvent){
+    public void report(ActionEvent actionEvent){
         try {
-            new Izvjestaj().showReport(dao.getConnection());
+            new Report().showReport(dao.getConnection());
         } catch (JRException e1) {
             e1.printStackTrace();
         }

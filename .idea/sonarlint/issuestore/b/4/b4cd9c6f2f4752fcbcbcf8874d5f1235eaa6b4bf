@@ -1,62 +1,62 @@
 
-q
-java:S1104"OMake tf2 a static final constant or non-public and provide accessors if needed.(é—¥îüÿÿÿÿ8¦å‚—°/
-E
-java:S1659"#Declare "tfdlt" on a separate line.(é—¥îüÿÿÿÿ8¦å‚—°/
-s
-java:S1104"QMake tipka a static final constant or non-public and provide accessors if needed.(·à‘ùÿÿÿÿ8¦å‚—°/
->
-java:S1659"!Declare "lv2" on a separate line.(Ú½¾½8¦å‚—°/
-s
-java:S1104"QMake tfdlt a static final constant or non-public and provide accessors if needed.(é—¥îüÿÿÿÿ8¦å‚—°/
+‰
+java:S1130<"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ó “Æ8¦å‚—°/
+T
+java:S1172Q"2Remove this unused method parameter "actionEvent".(û¨óÜüÿÿÿÿ8¦å‚—°/
+L
+java:S3740"/Provide the parametrized type for this generic.(Ú½¾½8¦å‚—°/
 C
 java:S1659"!Declare "dlt" on a separate line.(·à‘ùÿÿÿÿ8¦å‚—°/
-O
-java:S1172<"2Remove this unused method parameter "actionEvent".(ó “Æ8¦å‚—°/
-l
-java:S1104"OMake lb3 a static final constant or non-public and provide accessors if needed.(º•É‹8¦å‚—°/
-q
-java:S1104"OMake add a static final constant or non-public and provide accessors if needed.(·à‘ùÿÿÿÿ8¦å‚—°/
 q
 java:S1104"OMake tf1 a static final constant or non-public and provide accessors if needed.(é—¥îüÿÿÿÿ8¦å‚—°/
 l
 java:S1104"OMake lv2 a static final constant or non-public and provide accessors if needed.(Ú½¾½8¦å‚—°/
-p
-java:S1104"NMake iz a static final constant or non-public and provide accessors if needed.(·à‘ùÿÿÿÿ8¦å‚—°/
+s
+java:S1104"QMake tipka a static final constant or non-public and provide accessors if needed.(·à‘ùÿÿÿÿ8¦å‚—°/
+q
+java:S1104"OMake dlt a static final constant or non-public and provide accessors if needed.(·à‘ùÿÿÿÿ8¦å‚—°/
+l
+java:S1104"OMake lb3 a static final constant or non-public and provide accessors if needed.(º•É‹8¦å‚—°/
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜Ü¥Üüÿÿÿÿ8¦å‚—°/
+q
+java:S1104"OMake add a static final constant or non-public and provide accessors if needed.(·à‘ùÿÿÿÿ8¦å‚—°/
+s
+java:S1104"QMake tfdlt a static final constant or non-public and provide accessors if needed.(é—¥îüÿÿÿÿ8¦å‚—°/
+C
+java:S1659"!Declare "tf2" on a separate line.(é—¥îüÿÿÿÿ8¦å‚—°/
+r
+java:S1104"PMake odoh a static final constant or non-public and provide accessors if needed.(·à‘ùÿÿÿÿ8¦å‚—°/
+q
+java:S1104"OMake tf2 a static final constant or non-public and provide accessors if needed.(é—¥îüÿÿÿÿ8¦å‚—°/
+V
+java:S1128"4Remove this unused import 'javafx.beans.Observable'.(æ ûÿÿÿÿ8¦å‚—°/
+>
+java:S1659"!Declare "lv2" on a separate line.(Ú½¾½8¦å‚—°/
 j
 java:S1104"MMake o a static final constant or non-public and provide accessors if needed.(áÛı8¦å‚—°/
 T
-java:S1172E"2Remove this unused method parameter "actionEvent".(Ûäâ„şÿÿÿÿ8¦å‚—°/
-T
-java:S11720"2Remove this unused method parameter "actionEvent".(½Š¨Ÿùÿÿÿÿ8¦å‚—°/
-C
-java:S1659"!Declare "tf2" on a separate line.(é—¥îüÿÿÿÿ8¦å‚—°/
-L
-java:S3740"/Provide the parametrized type for this generic.(Ú½¾½8¦å‚—°/
-`
-java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(ÄÜ€éüÿÿÿÿ8¦å‚—°/
-V
-java:S1128"4Remove this unused import 'javafx.beans.Observable'.(æ ûÿÿÿÿ8¦å‚—°/
-C
-java:S1659"!Declare "add" on a separate line.(·à‘ùÿÿÿÿ8¦å‚—°/
-T
 java:S1172'"2Remove this unused method parameter "actionEvent".(í÷é®ûÿÿÿÿ8¦å‚—°/
-r
-java:S1104"PMake odoh a static final constant or non-public and provide accessors if needed.(·à‘ùÿÿÿÿ8¦å‚—°/
-‰
-java:S1130<"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ó “Æ8¦å‚—°/
-L
-java:S3740"/Provide the parametrized type for this generic.(Ú½¾½8¦å‚—°/
-T
-java:S1172Q"2Remove this unused method parameter "actionEvent".(û¨óÜüÿÿÿÿ8¦å‚—°/
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜Ü¥Üüÿÿÿÿ8¦å‚—°/
-k
-java:S1104"NMake lv a static final constant or non-public and provide accessors if needed.(Ú½¾½8¦å‚—°/
-q
-java:S1104"OMake dlt a static final constant or non-public and provide accessors if needed.(·à‘ùÿÿÿÿ8¦å‚—°/
-B
-java:S1659" Declare "iz" on a separate line.(·à‘ùÿÿÿÿ8¦å‚—°/
 n
 java:S1104"QMake datum a static final constant or non-public and provide accessors if needed.(ıÙšÖ8¦å‚—°/
+k
+java:S1104"NMake lv a static final constant or non-public and provide accessors if needed.(Ú½¾½8¦å‚—°/
 D
 java:S1659""Declare "odoh" on a separate line.(·à‘ùÿÿÿÿ8¦å‚—°/
+T
+java:S11720"2Remove this unused method parameter "actionEvent".(½Š¨Ÿùÿÿÿÿ8¦å‚—°/
+B
+java:S1659" Declare "iz" on a separate line.(·à‘ùÿÿÿÿ8¦å‚—°/
+T
+java:S1172E"2Remove this unused method parameter "actionEvent".(Ûäâ„şÿÿÿÿ8¦å‚—°/
+L
+java:S3740"/Provide the parametrized type for this generic.(Ú½¾½8¦å‚—°/
+C
+java:S1659"!Declare "add" on a separate line.(·à‘ùÿÿÿÿ8¦å‚—°/
+O
+java:S1172<"2Remove this unused method parameter "actionEvent".(ó “Æ8¦å‚—°/
+p
+java:S1104"NMake iz a static final constant or non-public and provide accessors if needed.(·à‘ùÿÿÿÿ8¦å‚—°/
+`
+java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(ÄÜ€éüÿÿÿÿ8¦å‚—°/
+E
+java:S1659"#Declare "tfdlt" on a separate line.(é—¥îüÿÿÿÿ8¦å‚—°/

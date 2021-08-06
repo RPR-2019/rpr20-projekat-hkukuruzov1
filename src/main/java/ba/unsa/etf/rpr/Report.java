@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Izvjestaj extends JFrame {
+public class Report extends JFrame {
     public void showReport(Connection conn) throws JRException {
         String reportSrcFile = getClass().getResource("/reports/rep.jrxml").getFile();
         String reportsDir = getClass().getResource("/reports/").getFile();

@@ -1,7 +1,7 @@
 package ba.unsa.etf.rpr.Controller;
 
 import ba.unsa.etf.rpr.Dao;
-import ba.unsa.etf.rpr.Korisnik;
+import ba.unsa.etf.rpr.User;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -64,13 +64,11 @@ public class Controller {
         System.exit(0);
     }
     public void actionLogin(ActionEvent actionEvent) throws SQLException, IOException {
-        if(dao.daLiPostojiKorisnik(lbl.getText(),pass.getText()))
+        if(dao.doesUserExist(lbl.getText(),pass.getText()))
         {
-            Korisnik k= dao.dajKorisnika(lbl.getText(),pass.getText());
-            if(dao.daLiJeAdmin(k.getUsername(),k.getPassword())){
-               //otvori admin prozor
+            User k= dao.getUser(lbl.getText(),pass.getText());
+            if(dao.isItAdmin(k.getUsername(),k.getPassword())){
                 Stage stage = (Stage) login.getScene().getWindow();
-                // do what you have to do
                 stage.close();
                 Stage primaryStage=new Stage();
                 ResourceBundle bundle = ResourceBundle.getBundle("Translation");
@@ -84,16 +82,14 @@ public class Controller {
                 primaryStage.show();
             }
             else{
-                //otvori radnik prozor
                 Stage stage = (Stage) login.getScene().getWindow();
-                // do what you have to do
                 stage.close();
                 Stage primaryStage=new Stage();
                 ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/radnik.fxml"),bundle);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/worker.fxml"),bundle);
                 Parent root=loader.load();
-                RadnoVrijemeController novoooo=loader.getController();
-                novoooo.postavi(this);
+                WorkTimeController newone=loader.getController();
+                newone.setController(this);
                 primaryStage.setTitle("Clockify");
                 primaryStage.setScene(new Scene(root, 450, 200));
                 primaryStage.setMinHeight(200);
@@ -116,37 +112,37 @@ public class Controller {
             alert.showAndWait();
         }
     }
-    public void engleski(ActionEvent actionEvent){
+    public void englishLanguage(ActionEvent actionEvent){
         Stage stage = (Stage) login.getScene().getWindow();
         Locale.setDefault(new Locale("en", "US"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavna.fxml"), ResourceBundle.getBundle("Translation"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"), ResourceBundle.getBundle("Translation"));
         try {
             stage.setScene(new Scene(loader.load(),400,350));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void bosanski(ActionEvent actionEvent){
+    public void bosnianLanguage(ActionEvent actionEvent){
         Stage stage = (Stage) login.getScene().getWindow();
         Locale.setDefault(new Locale("bs", "BA"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavna.fxml"), ResourceBundle.getBundle("Translation"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"), ResourceBundle.getBundle("Translation"));
         try {
             stage.setScene(new Scene(loader.load(),400,350));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void francuski(ActionEvent actionEvent){
+    public void frenchLanguage(ActionEvent actionEvent){
         Stage stage = (Stage) login.getScene().getWindow();
         Locale.setDefault(new Locale("fr", "FR"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavna.fxml"), ResourceBundle.getBundle("Translation"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"), ResourceBundle.getBundle("Translation"));
         try {
             stage.setScene(new Scene(loader.load(),400,350));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void about(ActionEvent actionEvent) throws IOException {
+    public void aboutWindow(ActionEvent actionEvent) throws IOException {
         Stage primaryStage=new Stage();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/about.fxml"),bundle);

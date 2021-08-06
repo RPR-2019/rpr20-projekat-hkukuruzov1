@@ -17,7 +17,7 @@
 
 <BorderPane fx:id="brdPane" prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.Controller.Controller">
   <stylesheets>
-      <URL value="@/css/glavna.css" />
+      <URL value="@/css/main.css" />
   </stylesheets>
    <top>
       <MenuBar BorderPane.alignment="CENTER">
@@ -26,9 +26,9 @@
             <items>
                   <Menu fx:id="jezik" text="_Language">
                     <items>
-                        <MenuItem fx:id="eng" mnemonicParsing="false" onAction="#engleski" text="English" />
-                      <MenuItem fx:id="bs" mnemonicParsing="false" onAction="#bosanski" text="Bosanski" />
-                        <MenuItem fx:id="fr" mnemonicParsing="false" onAction="#francuski" text="Francais" />
+                        <MenuItem fx:id="eng" mnemonicParsing="false" onAction="#englishLanguage" text="English" />
+                      <MenuItem fx:id="bs" mnemonicParsing="false" onAction="#bosnianLanguage" text="Bosanski" />
+                        <MenuItem fx:id="fr" mnemonicParsing="false" onAction="#frenchLanguage" text="Francais" />
                     </items>
                   </Menu>
                   <MenuItem text="_Close" />
@@ -38,7 +38,7 @@
           </Menu>
           <Menu text="_Help">
             <items>
-              <MenuItem fx:id="ab" onAction="#about" text="_About" />
+              <MenuItem fx:id="ab" onAction="#aboutWindow" text="_About" />
             </items>
           </Menu>
         </menus>

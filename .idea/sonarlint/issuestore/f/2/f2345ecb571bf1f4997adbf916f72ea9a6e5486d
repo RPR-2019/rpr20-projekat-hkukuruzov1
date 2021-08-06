@@ -1,33 +1,33 @@
 
-`
-java:S3973"GUse indentation to denote the code conditionally executed by this "if".(î•ŠÖùÿÿÿÿ
-E
-java:S1659"*Declare "ubaciVrijeme" on a separate line.(Ùšå8‰«Ò³¯/
-@
-java:S1659",Declare "brisiKorisnika" on a separate line.(Ùšå
-Q
-java:S1751"6Remove this "return" statement or make it conditional.(§¼Éç8‡€«³¯/
-@
-java:S1659",Declare "dajSveUMjesecu" on a separate line.(Ùšå
-O
-java:S1751"6Remove this "return" statement or make it conditional.(­–‚šüÿÿÿÿ
+B
+java:S1659",Declare "brisiKorisnika" on a separate line.(Ùšå
 C
-java:S1659"/Declare "ubaciRadnoVrijeme" on a separate line.(Ùšå
+java:S1659"-Declare "brisiKorisnika1" on a separate line.(Ùšå
+?
+java:S2115")Add password protection to this database.(¸¢ìâ
+S
+java:S1751,"6Remove this "return" statement or make it conditional.(§¼Éç8‡€«³¯/
+B
+java:S1659",Declare "dajImeiPrezime" on a separate line.(Ùšå
+M
+java:S1751"6Remove this "return" statement or make it conditional.(§¼Éç
+L
+java:S1659"/Declare "ubaciRadnoVrijeme" on a separate line.(Ùšå8‰«Ò³¯/
+L
+java:S1751Z"6Remove this "return" statement or make it conditional.(ÁÅ‹½
+:
+java:S1659"$Declare "dajDan" on a separate line.(Ùšå
+<
+java:S1659"&Declare "nullKraj" on a separate line.(Ùšå
+Q
+java:S1751@"6Remove this "return" statement or make it conditional.(­–‚šüÿÿÿÿ
+:
+java:S1659"$Declare "dajSve" on a separate line.(Ùšå
+b
+java:S39736"GUse indentation to denote the code conditionally executed by this "if".(î•ŠÖùÿÿÿÿ
 @
-java:S1659",Declare "dajImeiPrezime" on a separate line.(Ùšå
-=
-java:S2115")Add password protection to this database.(¸¢ìâ
-A
-java:S1659"-Declare "brisiKorisnika1" on a separate line.(Ùšå
-@
-java:S1659",Declare "ubaciKorisnika" on a separate line.(Ùšå
-A
-java:S1659"&Declare "nullKraj" on a separate line.(Ùšå8È´¥³¯/
-8
-java:S1659"$Declare "dajDan" on a separate line.(Ùšå
-J
-java:S1751"6Remove this "return" statement or make it conditional.(§¼Éç
-J
-java:S1751"6Remove this "return" statement or make it conditional.(ÁÅ‹½
-8
-java:S1659"$Declare "dajSve" on a separate line.(Ùšå
+java:S1659"*Declare "ubaciVrijeme" on a separate line.(Ùšå
+B
+java:S1659",Declare "dajSveUMjesecu" on a separate line.(Ùšå
+I
+java:S1659",Declare "ubaciKorisnika" on a separate line.(Ùšå8È´¥³¯/

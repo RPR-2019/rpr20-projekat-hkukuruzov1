@@ -1,8 +1,8 @@
 package ba.unsa.etf.rpr.Controller;
 
 import ba.unsa.etf.rpr.Dao;
-import ba.unsa.etf.rpr.RadnoVrijeme;
-import ba.unsa.etf.rpr.mjestoRada;
+import ba.unsa.etf.rpr.WorkTime;
+import ba.unsa.etf.rpr.WorkPlace;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -28,14 +28,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class RadnoVrijemeController {
-    public Button ulaz;
-    public Button izlaz;
+public class WorkTimeController {
+    public Button in;
+    public Button out;
     public RadioButton rw;
     public RadioButton ow;
-    public boolean aktiv;
+    public boolean active;
     public Label time;
-    public RadnoVrijeme rad=new RadnoVrijeme();
+    public WorkTime wk =new WorkTime();
     public Controller c1;
     private Dao dao;
     @FXML
@@ -50,19 +50,19 @@ public class RadnoVrijemeController {
         clock.setCycleCount(Animation.INDEFINITE);
         clock.play();
     }
-    public void postavi(Controller s){
+    public void setController(Controller s){
         c1=s;
     }
-    public void start(ActionEvent actionEvent) throws SQLException {
-        if (rad.getVrstaRada() != null && !dao.imaLiNule(c1.lbl.getText())) {
-            rad.setId(c1.lbl.getText());
-            rad.setPocetak(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
-            rad.setDan(LocalDate.now().getDayOfMonth());
-            rad.setMjesec(LocalDate.now().getMonth().toString());
-            rad.setGodina(LocalDate.now().getYear());
-            rad.setKraj(null);
-            dao.ubaciVrijeme1(rad);
-            aktiv = true;
+    public void startWorking(ActionEvent actionEvent) throws SQLException {
+        if (wk.getTypeOfWork() != null && !dao.workTimeCheck(c1.lbl.getText())) {
+            wk.setId(c1.lbl.getText());
+            wk.setStart(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
+            wk.setDay(LocalDate.now().getDayOfMonth());
+            wk.setMonth(LocalDate.now().getMonth().toString());
+            wk.setYear(LocalDate.now().getYear());
+            wk.setEnd(null);
+            dao.inputTimeNew(wk);
+            active = true;
         }
         else{
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -77,11 +77,11 @@ public class RadnoVrijemeController {
         }
     }
 
-    public void kraj(ActionEvent actionEvent) throws SQLException {
-        if (dao.imaLiNule(c1.lbl.getText())) {
-            rad.setKraj(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
-            rad.setId(c1.lbl.getText());
-            if (aktiv) {
+    public void endWorking(ActionEvent actionEvent) throws SQLException {
+        if (dao.workTimeCheck(c1.lbl.getText())) {
+            wk.setEnd(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString());
+            wk.setId(c1.lbl.getText());
+            if (active) {
                 if (LocalTime.now().getHour() < 16) {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     ResourceBundle rb = ResourceBundle.getBundle("Translation", Locale.getDefault());
@@ -94,11 +94,11 @@ public class RadnoVrijemeController {
                     alert.showAndWait();
                 }
             }
-            dao.ubaciVrijeme(rad);
-            rad=null;
+            dao.inputTime(wk);
+            wk =null;
         }
         else{
-            if(rad.getPocetak()==null){
+            if(wk.getStart()==null){
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 ResourceBundle rb = ResourceBundle.getBundle("Translation", Locale.getDefault());
                 alert.setTitle(rb.getString("Upozorenje"));
@@ -109,7 +109,7 @@ public class RadnoVrijemeController {
                 stage.getIcons().add(new Image(this.getClass().getResource("/img/Ikona.png").toString()));
                 alert.showAndWait();
             }
-                else if(rad.getVrstaRada()==null){
+                else if(wk.getTypeOfWork()==null){
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 ResourceBundle rb = ResourceBundle.getBundle("Translation", Locale.getDefault());
                 alert.setTitle(rb.getString("Upozorenje"));
@@ -122,23 +122,23 @@ public class RadnoVrijemeController {
             }
         }
     }
-    public void firma(ActionEvent actionEvent) {
-        rad.setVrstaRada(mjestoRada.ONSITE);
+    public void onSite(ActionEvent actionEvent) {
+        wk.setTypeOfWork(WorkPlace.ONSITE);
     }
-        public void kuci(ActionEvent actionEvent) {
-        rad.setVrstaRada(mjestoRada.REMOTE);
+    public void homeWork(ActionEvent actionEvent) {
+        wk.setTypeOfWork(WorkPlace.REMOTE);
     }
-    public boolean provjera(RadnoVrijeme s){
-        if(s.getId()!=null && s.getKraj()==null && s.getPocetak()!=null && s.getVrstaRada()!=null)
+    public boolean check(WorkTime s){
+        if(s.getId()!=null && s.getEnd()==null && s.getStart()!=null && s.getTypeOfWork()!=null)
             return true;
         return false;
     }
-    public void cya(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) ulaz.getScene().getWindow();
+    public void logut(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) in.getScene().getWindow();
         stage.close();
         Stage primaryStage=new Stage();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/glavna.fxml"),bundle);
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/main.fxml"),bundle);
         primaryStage.setTitle("Clockify");
         primaryStage.setScene(new Scene(root, 400, 350));
         primaryStage.setResizable(false);

@@ -1,7 +1,7 @@
 package ba.unsa.etf.rpr.Controller;
 
 import ba.unsa.etf.rpr.Dao;
-import ba.unsa.etf.rpr.Korisnik;
+import ba.unsa.etf.rpr.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class FormaController {
+public class FormController {
     public Button ex,sb;
     public TextField tf1,tf2,tf3;
     public CheckBox cb;
@@ -21,7 +21,7 @@ public class FormaController {
     void initialize() throws SQLException {
         dao=Dao.getInstance();
     }
-    public void izlaz(ActionEvent actionEvent){
+    public void exit(ActionEvent actionEvent){
         Stage stage = (Stage) ex.getScene().getWindow();
         stage.close();
     }
@@ -29,7 +29,7 @@ public class FormaController {
         if(tf1.getText()!=null && tf2.getText()!=null && tf3.getText()!=null){
             if(p1.textProperty().get().equals(p2.textProperty().get())){
                 int myInt = cb.isSelected() ? 1 : 0;
-                if(!dao.ubaci(new Korisnik(tf1.getText(),p1.getText(),myInt,tf2.getText(),tf3.getText())))
+                if(!dao.addUser(new User(tf1.getText(),p1.getText(),myInt,tf2.getText(),tf3.getText())))
                 {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
                     ResourceBundle rb = ResourceBundle.getBundle("Translation", Locale.getDefault());
